@@ -1,0 +1,260 @@
+@import './../../../styles.scss';
+
+.decoration {
+    position: absolute;
+    left: -250px;
+    top: 50%;
+    transform: translate(0, -50%);
+    filter: blur(100px);
+    border-radius: 50%;
+    background-color: rgba(8, 70, 59, 0.75);
+    width: 500px;
+    height: 650px;
+    z-index: 3;
+}
+
+section {
+    margin: 200px auto 150px auto;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 1440px;
+    @include flexer(center, space-between, row, 16px);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+
+    h2 {
+        color: #3DCFB6;
+        font-weight: 500;
+        margin: 0 0 16px 0;
+    }
+
+    div {
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .infotext {
+        z-index: 3;
+    }
+
+    .infobox {
+        width: 100%;
+        max-width: 568px;
+        border: 1px solid #3DCFB6;
+        border-radius: 30px;
+        background-color: rgba(61, 207, 182, 0.1);
+        padding: 32px;
+        font-size: 18px;
+
+        h3 {
+            font-size: 64px;
+            font-weight: bold;
+            color: #3DCFB6;
+            margin-bottom: 40px;
+        }
+
+        p {
+            margin-bottom: 32px;
+        }
+
+        .highlighted {
+            font-weight: bold;
+            font-size: larger;
+
+            span {
+                color: #3DCFB6;
+            }
+        }
+    }
+
+    .skill-icons {
+        width: 100%;
+        //max-width: 568px;
+        @include flexer(center, center, row, 80px 40px);
+        flex-wrap: wrap;
+        text-align: center;
+
+        div {
+            flex: 0 0 calc(100% / 5);
+            @include flexer(center, center, column, 16px);
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                scale: 1.1;
+                //filter: drop-shadow(1px 1px 25px #fff);
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            svg {
+                fill: white;
+                transition: all 0.2s ease-in-out;
+                height: 60px;
+                width: 60px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1247px) {
+    section {
+        @include flexer(center, center, column, 32px);
+    }
+
+    .skill-icons {
+        z-index: 3;
+        flex-wrap: wrap;
+        @include flexer(center, center, column, 16px 16px !important);
+
+        div {
+            flex: 0 0 calc(100% / 4) !important;
+            @include flexer(center, center, column, 8px !important);
+        }
+    }
+
+    .decoration {
+        position: absolute;
+        left: -100px;
+        top: 50%;
+        transform: translate(0, -50%);
+        filter: blur(100px);
+        border-radius: 50%;
+        background-color: rgba(8, 70, 59, 0.75);
+        width: 200px;
+        height: 650px;
+        z-index: 2;
+    }
+}
+
+.html {
+    &:hover {
+        svg {
+            fill: #e34e26 !important;
+        }
+
+        p {
+            color: #e34e26;
+        }
+    }
+}
+
+.css {
+    &:hover {
+        svg {
+            fill: #33a9dc !important;
+        }
+
+        p {
+            color: #33a9dc;
+        }
+    }
+}
+
+.javascript {
+    &:hover {
+        svg {
+            fill: #fcd329 !important;
+        }
+
+        p {
+            color: #fcd329;
+        }
+    }
+}
+
+.material-design {
+    &:hover {
+        svg {
+            fill: #9f86ff !important;
+        }
+
+        p {
+            color: #9f86ff;
+        }
+    }
+}
+
+.typescript {
+    &:hover {
+        svg {
+            fill: #007ad0 !important;
+        }
+
+        p {
+            color: #007ad0;
+        }
+    }
+}
+
+.angular {
+    &:hover {
+        svg {
+            fill: #b52e31 !important;
+        }
+
+        p {
+            color: #b52e31;
+        }
+    }
+}
+
+.firebase {
+    &:hover {
+        svg {
+            fill: #ffcb2b !important;
+        }
+
+        p {
+            color: #ffcb2b;
+        }
+    }
+}
+
+.git {
+    &:hover {
+        svg {
+            fill: #f05033 !important;
+        }
+
+        p {
+            color: #f05033;
+        }
+    }
+}
+
+.rest-api {
+    &:hover {
+        svg {
+            fill: #259eca !important;
+        }
+
+        p {
+            color: #259eca;
+        }
+    }
+}
+
+.scrum {
+    &:hover {
+        svg {
+            fill: #2563EB !important;
+        }
+
+        p {
+            color: #2563EB;
+        }
+    }
+}
+
+.growth-mindset {
+    &:hover {
+        svg {
+            fill: #3DCFB6 !important;
+        }
+
+        p {
+            color: #3DCFB6;
+        }
+    }
+}

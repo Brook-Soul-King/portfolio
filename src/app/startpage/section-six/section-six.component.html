@@ -1,0 +1,43 @@
+<section>
+    <div class="left">
+        <div>Schreiben Sie mir</div>
+        <h2>Gemeinsam ans Werk</h2>
+
+        <h3>Brauchen Sie Hilfe bei einem Problem?</h3>
+        <p>Kontaktieren Sie mich über dieses Formular, ich freue mich, von Ihnen
+            zu hören, Ihre Ideen zu erfahren und zu Ihren Projekten beizutragen.<br>
+            <br>
+            Brauchen Sie einen Frontend-Entwickler?
+            <span>Reden wir drüber!</span>
+        </p>
+    </div>
+    <form class="right">
+        <div class="input-wrapper" (click)="focusInput(nameInput)">
+            <label for="nameInput">Wie ist Ihr Name?</label>
+            <input id="nameInput" required #nameInput type="text" placeholder="Ihr Name kommt hierhin" />
+        </div>
+
+        <div class="input-wrapper" (click)="focusInput(emailInput)">
+            <label for="emailInput">Wie lautet Ihre E-Mail?</label>
+            <input id="emailInput" required #emailInput type="text" placeholder="ihreemail@email.com" />
+        </div>
+
+        <div class="input-wrapper" (click)="focusInput(messageInput)">
+            <label for="messageInput">Wie kann ich Ihnen helfen?</label>
+            <textarea id="messageInput" required #messageInput
+                placeholder="Hallo Lukas, ich bin interessiert an ..."></textarea>
+        </div>
+
+        <div class="confirm-wrapper">
+            <input id="confirm-cb" type="checkbox" required />
+            <label for="confirm-cb">
+                Ich habe die <a>Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten gemäß den Angaben zu.
+            </label>
+        </div>
+
+        <button>
+            Nachricht senden
+        </button>
+    </form>
+
+</section>

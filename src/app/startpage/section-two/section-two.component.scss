@@ -1,0 +1,108 @@
+@import './../../../styles.scss';
+
+section {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 16px;
+    margin: 0 auto 150px auto;
+    @include flexer(center, space-between, row, 0);
+    font-size: 18px;
+
+    .profile-pic {
+        position: relative;
+        display: inline-block;
+        border-radius: 32px;
+        padding: 0;
+        z-index: 99;
+        transition: all 0.25s ease-in-out !important;
+
+        img {
+            max-width: 568px;
+            width: 100%;
+        }
+    }
+
+    .profile-pic::before {
+        content: '';
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(45deg,
+                transparent,
+                transparent 24px,
+                #3dcfb6 24px,
+                #3dcfb6 25px);
+        border-radius: 32px;
+        z-index: -1;
+        transition: all 0.25s ease-in-out !important;
+    }
+
+    h2 {
+        color: #3DCFB6;
+        font-weight: 500;
+        margin: 200px 0 16px 0;
+    }
+
+    .infobox {
+        max-width: 568px;
+        border: 1px solid #3DCFB6;
+        border-radius: 30px;
+        background-color: rgba(61, 207, 182, 0.1);
+        padding: 32px;
+
+        h3 {
+            font-size: 64px;
+            font-weight: bold;
+            color: #3DCFB6;
+            margin-bottom: 40px;
+        }
+
+        .infotext-wrapper {
+            @include flexer(center, center, column, 24px);
+            margin-top: 24px;
+
+            .grid-text {
+                @include flexer(center, space-around, row, 24px);
+                color: rgba(255, 255, 255, 0.8) !important;
+
+                svg {
+                    width: 32px !important;
+                    height: 32px !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1219px) {
+    section {
+        @include flexer(center, center, column, 40px);
+        font-size: 16px;
+
+        h2 {
+            margin: 0 0 16px 0;
+        }
+
+        .profile-pic::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .infobox h3 {
+            margin-bottom: 20px !important;
+        }
+
+        .infotext-wrapper .grid-text {
+            @include flexer(flex-start !important, space-around, row, 24px);
+
+            svg {
+                width: 32px !important;
+                height: 32px !important;
+            }
+        }
+    }
+}

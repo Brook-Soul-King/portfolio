@@ -1,0 +1,53 @@
+<section>
+    <div class="highlighted">Portfolio</div>
+    <h2>Meine Projekte</h2>
+    <p>Entdecken Sie hier eine Auswahl meiner Arbeiten - interagieren Sie mit den Prohekten, um die Projekte zu
+        testen.</p>
+
+    <div class="project-section">
+        <div class="left">
+            <ul>
+                <li class="project" (mouseenter)="setHoveredProject('join')" (mouseleave)="setHoveredProject(null)">
+                    <h3>Join</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Firebase</li>
+                    </ul>
+                </li>
+                <li class="project" (mouseenter)="setHoveredProject('el-pollo-loco')" (mouseleave)="setHoveredProject(null)">
+                    <h3>El pollo loco</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </li>
+                <li class="project" (mouseenter)="setHoveredProject('pokedex')" (mouseleave)="setHoveredProject(null)">
+                    <h3>Pokédex</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Rest-Api</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right">
+            <div *ngIf="hoveredProject === 'join'" class="striped-container">
+                <img src="./assets/img/project-join.png" alt="Projekt Join">
+            </div>
+
+            <div *ngIf="hoveredProject === 'el-pollo-loco'" class="striped-container">
+                <img src="./assets/img/project-pollo.png" alt="Projekt El pollo loco">
+            </div>
+
+            <div *ngIf="hoveredProject === 'pokedex'" class="striped-container">
+                <img src="./assets/img/project-pokedex.png" alt="Projekt Pokédex">
+            </div>
+        </div>
+    </div>
+</section>

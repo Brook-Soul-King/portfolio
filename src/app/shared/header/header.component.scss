@@ -1,0 +1,136 @@
+@import './../../../styles.scss';
+
+header {
+    font-family: "FiraCode" !important;
+    font-size: 20px;
+    margin: 0 auto;
+    z-index: 999;
+
+
+    .header-wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 16px;
+        height: 98px;
+
+        @include flexer(center, space-between, row, 0px);
+
+        section {
+            @include flexer(center, center, row, 24px);
+
+            nav {
+                @include flexer(center, center, row, 24px);
+
+                .hover-dot {
+                    position: relative;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        scale: 1.1;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -14px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 8px;
+                        height: 8px;
+                        background-color: #3dcfb6;
+                        border-radius: 50%;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                    }
+
+                    &:hover::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+
+    div {
+        width: 35px;
+        height: 4px;
+        //background-color: #3dcfb6;
+        //background-color: #1c1c1c;
+        background-color: white;
+        margin: 10px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+}
+
+/* rotiere und transformiere die erste und dritte Linie des Burger Menu´s */
+.burger-menu.active div:nth-child(1) {
+    transform: rotate(-45deg) translate(-12px, 8px);
+}
+
+.burger-menu.active div:nth-child(3) {
+    transform: rotate(45deg) translate(-12px, -8px);
+}
+
+/* versteck mittlere Linie wenn aktiv */
+.burger-menu.active div:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+@media screen and (max-width: 849px) {
+    .burger-menu {
+        display: block;
+    }
+
+    header {
+
+        .header-wrapper {
+            @include flexer(center, space-between, row-reverse, 0px);
+
+            section {
+                nav {
+                    text-align: left;
+                    display: none;
+                    width: 0px;
+                    height: 0px;
+                    transition: all 0.2s ease-in-out !important;
+                    position: absolute !important;
+                    top: 80px;
+                    right: 0%;
+
+                    &.active {
+                        width: 252px;
+                        height: 238px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        background: linear-gradient(50deg, rgba(28, 28, 28, 1) 40%, rgba(8, 70, 59, 1) 100%);
+                        border: 1px solid #3dcfb6;
+                        border-radius: 30px;
+                        position: absolute;
+                        top: 80px;
+                        right: 20px !important;
+                        z-index: 999;
+                        transition: all 0.2s ease-in-out;
+                    }
+
+                    .hover-dot {
+                        &:hover {
+                            scale: 1 !important;
+                        }
+
+                        &:hover::after {
+                            opacity: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

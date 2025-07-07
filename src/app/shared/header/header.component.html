@@ -1,0 +1,22 @@
+<header>
+    <div class="header-wrapper">
+        <section>
+            <!-- Burger-Menü -->
+            <div class="burger-menu" [class.active]="isMenuOpen" (click)="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Navigation mit ngClass -->
+            <nav [ngClass]="{ 'active': isMenuOpen }">
+                <a href="#section-2" class="hover-dot">Über mich</a>
+                <a href="#section-3" class="hover-dot">Skills</a>
+                <a href="#section-4" class="hover-dot">Projekte</a>
+                <span>Button</span>
+            </nav>
+        </section>
+
+        <div>Insert Logo</div>
+    </div>
+</header>

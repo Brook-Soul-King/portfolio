@@ -1,0 +1,26 @@
+@import './../../../styles.scss';
+
+footer {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    @include flexer(center, space-between, row, 16px);
+
+    .footer-claim {
+        color: #3dcfb6;
+    }
+
+    .link-tree {
+        text-align: left;
+        @include flexer(left, center, column, 8px);
+
+        a {
+            &:hover {
+                color: #3dcfb6;
+                text-decoration: none;
+            }
+        }
+
+    }
+}
