@@ -20,32 +20,36 @@ header {
             @include flexer(center, center, row, 24px);
 
             nav {
-                @include flexer(center, center, row, 24px);
+                @include flexer(center, center, row-reverse, 24px);
 
-                .hover-dot {
-                    position: relative;
-                    transition: all 0.2s ease-in-out;
+                div {
+                    @include flexer(center, center, row, 24px);
 
-                    &:hover {
-                        scale: 1.1;
-                    }
+                    .hover-dot {
+                        position: relative;
+                        transition: all 0.2s ease-in-out;
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -14px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: 8px;
-                        height: 8px;
-                        background-color: #3dcfb6;
-                        border-radius: 50%;
-                        opacity: 0;
-                        transition: opacity 0.3s ease-in-out;
-                    }
+                        &:hover {
+                            scale: 1.1;
+                        }
 
-                    &:hover::after {
-                        opacity: 1;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -14px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 8px;
+                            height: 8px;
+                            background-color: #3dcfb6;
+                            border-radius: 50%;
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out;
+                        }
+
+                        &:hover::after {
+                            opacity: 1;
+                        }
                     }
                 }
             }
@@ -83,6 +87,97 @@ header {
     transform: scale(0);
 }
 
+.switch {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #3dcfb6;
+    border-radius: 100px;
+
+    span {
+        position: absolute;
+        top: 7px;
+        pointer-events: none;
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: uppercase;
+        width: 50%;
+        text-align: center;
+
+        &.on {
+            left: 2px;
+            //padding-left: 2px;
+            color: #fff;
+        }
+
+        &.off {
+            right: 3px;
+            //padding-right: 4px;
+            color: #3dcfb6;
+        }
+    }
+}
+
+.check-toggle {
+    position: absolute;
+    visibility: hidden;
+
+    &.check-toggle-round-flat {
+        &+label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            //padding: 2px;
+            width: 100px;
+            height: 35px;
+            background-color: #1c1c1c;
+            border-radius: 100px;
+
+            &::before,
+            &::after {
+                display: block;
+                position: absolute;
+                content: "";
+            }
+
+            &::before {
+                top: 2px;
+                left: 2px;
+                bottom: 2px;
+                right: 2px;
+                background-color: #1c1c1c;
+                border-radius: 100px;
+            }
+
+            &::after {
+                top: 4px;
+                left: 4px;
+                bottom: 4px;
+                width: 48px;
+                background-color: #3dcfb6;
+                border-radius: 100px;
+                transition: margin 0.2s;
+            }
+        }
+
+        &:checked {
+            ~.off {
+                color: #fff;
+            }
+
+            ~.on {
+                color: #3dcfb6;
+            }
+
+            &+label::after {
+                margin-left: 44px;
+            }
+        }
+    }
+}
+
+
 @media screen and (max-width: 849px) {
     .burger-menu {
         display: block;
@@ -109,7 +204,7 @@ header {
                         height: 238px;
                         display: flex;
                         flex-direction: column;
-                        gap: 16px;
+                        gap: 24px;
                         background: linear-gradient(50deg, rgba(28, 28, 28, 1) 40%, rgba(8, 70, 59, 1) 100%);
                         border: 1px solid #3dcfb6;
                         border-radius: 30px;
@@ -120,13 +215,17 @@ header {
                         transition: all 0.2s ease-in-out;
                     }
 
-                    .hover-dot {
-                        &:hover {
-                            scale: 1 !important;
-                        }
+                    div {
+                        @include flexer(center, center, column, 24px);
 
-                        &:hover::after {
-                            opacity: 0 !important;
+                        .hover-dot {
+                            &:hover {
+                                scale: 1 !important;
+                            }
+
+                            &:hover::after {
+                                opacity: 0 !important;
+                            }
                         }
                     }
                 }

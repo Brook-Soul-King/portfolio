@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
+
 @Component({
   selector: 'app-section-five',
   standalone: true,

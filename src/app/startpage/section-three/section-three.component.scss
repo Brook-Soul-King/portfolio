@@ -115,14 +115,14 @@ section {
 
     .decoration {
         position: absolute;
-        left: -100px;
+        left: -50px;
         top: 50%;
         transform: translate(0, -50%);
         filter: blur(100px);
         border-radius: 50%;
         background-color: rgba(8, 70, 59, 0.75);
-        width: 200px;
-        height: 650px;
+        width: 75px;
+        height: 800px;
         z-index: 2;
     }
 }

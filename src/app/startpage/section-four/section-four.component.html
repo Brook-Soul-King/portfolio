@@ -7,7 +7,8 @@
     <div class="project-section">
         <div class="left">
             <ul>
-                <li class="project" (mouseenter)="setHoveredProject('join')" (mouseleave)="setHoveredProject(null)">
+                <li class="project" (mouseenter)="setHoveredProject('join')" (mouseleave)="setHoveredProject(null)"
+                    (click)="openDialog('Join')">
                     <h3>Join</h3>
                     <ul>
                         <li>JavaScript</li>
@@ -16,7 +17,8 @@
                         <li>Firebase</li>
                     </ul>
                 </li>
-                <li class="project" (mouseenter)="setHoveredProject('el-pollo-loco')" (mouseleave)="setHoveredProject(null)">
+                <li class="project" (mouseenter)="setHoveredProject('el-pollo-loco')"
+                    (mouseleave)="setHoveredProject(null)" (click)="openDialog('El pollo loco')">
                     <h3>El pollo loco</h3>
                     <ul>
                         <li>JavaScript</li>
@@ -24,7 +26,8 @@
                         <li>CSS</li>
                     </ul>
                 </li>
-                <li class="project" (mouseenter)="setHoveredProject('pokedex')" (mouseleave)="setHoveredProject(null)">
+                <li class="project" (mouseenter)="setHoveredProject('pokedex')" (mouseleave)="setHoveredProject(null)"
+                    (click)="openDialog('Pokédex')">
                     <h3>Pokédex</h3>
                     <ul>
                         <li>JavaScript</li>

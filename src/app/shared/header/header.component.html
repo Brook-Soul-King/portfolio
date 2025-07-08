@@ -10,12 +10,17 @@
 
             <!-- Navigation mit ngClass -->
             <nav [ngClass]="{ 'active': isMenuOpen }">
-                <a href="#section-2" class="hover-dot">Über mich</a>
-                <a href="#section-3" class="hover-dot">Skills</a>
-                <a href="#section-4" class="hover-dot">Projekte</a>
-                <span>
-                    <mat-slide-toggle>Slide me!</mat-slide-toggle>
-                </span>
+                <div>
+                    <a href="#section-2" class="hover-dot">Über mich</a>
+                    <a href="#section-3" class="hover-dot">Skills</a>
+                    <a href="#section-4" class="hover-dot">Projekte</a>
+                </div>
+                <div class="switch">
+                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <label for="language-toggle"></label>
+                    <span class="on">DE</span>
+                    <span class="off">EN</span>
+                </div>
             </nav>
         </section>
 
