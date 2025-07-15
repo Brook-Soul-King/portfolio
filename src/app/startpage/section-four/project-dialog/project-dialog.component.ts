@@ -1,14 +1,23 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule],
+  imports: [CommonModule],
   templateUrl: './project-dialog.component.html',
   styleUrl: './project-dialog.component.scss'
 })
 export class ProjectDialogComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { project: string }) {}
+  @Input() show = false;
+  @Input() close!: () => void;
+
+  @Input() project!: {
+    id: string;
+    title: string;
+    description: string;
+    technologies?: string[];
+    image?: string;
+  };
+
 }

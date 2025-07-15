@@ -7,6 +7,7 @@
     scrollbar-width: thin;
     scrollbar-color: rgba(8, 70, 59, 1) #1c1c1c;
 }
+
 ::placeholder {
     color: #fff;
     opacity: 0.7;
@@ -122,14 +123,4 @@ a {
     .btn-row {
         @include flexer(center, center, row, 24px);
     }
-}
-
-// Design Dialog
-
-::ng-deep .mat-dialog-container.custom-dialog {
-  background-color: #1c1c1c;
-  color: #fff;
-  border-radius: 16px;
-  padding: 24px;
-  border: 1px solid #3dcfb6;
 }

@@ -7,50 +7,25 @@
     <div class="project-section">
         <div class="left">
             <ul>
-                <li class="project" (mouseenter)="setHoveredProject('join')" (mouseleave)="setHoveredProject(null)"
-                    (click)="openDialog('Join')">
-                    <h3>Join</h3>
+                <li class="project" *ngFor="let project of projects" (mouseenter)="setHoveredProject(project.id)"
+                    (mouseleave)="setHoveredProject(null)" (click)="openDialog(project)">
+                    <h3>{{ project.title }}</h3>
                     <ul>
-                        <li>JavaScript</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Firebase</li>
-                    </ul>
-                </li>
-                <li class="project" (mouseenter)="setHoveredProject('el-pollo-loco')"
-                    (mouseleave)="setHoveredProject(null)" (click)="openDialog('El pollo loco')">
-                    <h3>El pollo loco</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </li>
-                <li class="project" (mouseenter)="setHoveredProject('pokedex')" (mouseleave)="setHoveredProject(null)"
-                    (click)="openDialog('Pokédex')">
-                    <h3>Pokédex</h3>
-                    <ul>
-                        <li>JavaScript</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Rest-Api</li>
+                        <li *ngFor="let tech of project.technologies">{{ tech }}</li>
                     </ul>
                 </li>
             </ul>
+
+            <app-project-dialog *ngIf="dialogVisible" [project]="selectedProject" [show]="dialogVisible"
+                [close]="closeDialog"></app-project-dialog>
         </div>
 
         <div class="right">
-            <div *ngIf="hoveredProject === 'join'" class="striped-container">
-                <img src="./assets/img/project-join.png" alt="Projekt Join">
-            </div>
-
-            <div *ngIf="hoveredProject === 'el-pollo-loco'" class="striped-container">
-                <img src="./assets/img/project-pollo.png" alt="Projekt El pollo loco">
-            </div>
-
-            <div *ngIf="hoveredProject === 'pokedex'" class="striped-container">
-                <img src="./assets/img/project-pokedex.png" alt="Projekt Pokédex">
-            </div>
+            <ng-container *ngFor="let project of projects">
+                <div *ngIf="hoveredProject === project.id" class="striped-container">
+                    <img [src]="project.image" [alt]="'Projekt ' + project.title" />
+                </div>
+            </ng-container>
         </div>
     </div>
 </section>

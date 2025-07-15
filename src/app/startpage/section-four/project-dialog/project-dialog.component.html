@@ -1,2 +1,26 @@
-<h2>{{ data.project }}</h2>
-<p>Hier könnte eine ausführliche Projektbeschreibung stehen.</p>
+<div class="overlay" *ngIf="show" (click)="close()">
+  <div class="dialog" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="close()">×</button>
+    <div>
+      <p>{{ project?.id }}</p>
+
+      <h2 class="dialog-title">{{ project?.title }}</h2>
+
+      <p>Worum geht es in diesem Projekt?</p>
+
+      <p class="dialog-description">{{ project?.description }}</p>
+
+      <ul *ngIf="project?.technologies">
+        <li *ngFor="let tech of project.technologies" class="{{ tech }}">{{ tech }}</li>
+      </ul>
+
+      <div>
+        <button>GitHub</button>
+        <button>Live Test</button>
+      </div>
+    </div>
+    
+    <img *ngIf="project?.image" [src]="project.image" [alt]="project.title" />
+
+  </div>
+</div>
