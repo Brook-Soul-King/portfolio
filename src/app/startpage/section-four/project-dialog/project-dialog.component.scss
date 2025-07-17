@@ -68,8 +68,6 @@ p {
   }
 }
 
-
-
 .close-btn {
   position: absolute;
   top: 16px;
@@ -117,6 +115,38 @@ ul {
 
 .ref-btn-row {
   @include flexer(center, flex-start, row, 32px);
+
+  .link-btn {
+    border: 1px solid white;
+    border-radius: 100px;
+    padding: 18px 48px 18px 18px;
+    position: relative;
+    font-size: 18px;
+    line-height: 120%;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      width: 11px;
+      height: 11px;
+      background: url("./../../../../assets/img/coding-icons/arrow-link.svg") no-repeat center;
+      background-size: cover;
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:hover {
+      border: 1px solid #3dcfb6;
+      color: #3dcfb6;
+
+      &::after {
+        top: 20px;
+        right: 24px;
+      }
+    }
+  }
 }
 
 .JavaScript::after,
@@ -134,7 +164,7 @@ ul {
   height: 24px;
   background-size: cover;
   background-position: center;
-  background-repeat: none !important;
+  background-repeat: no-repeat !important;
 }
 
 .JavaScript::after {
