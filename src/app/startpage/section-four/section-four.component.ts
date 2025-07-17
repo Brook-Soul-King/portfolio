@@ -50,9 +50,11 @@ export class SectionFourComponent {
   openDialog(project: any) {
     this.selectedProject = project;
     this.dialogVisible = true;
+    document.body.style.overflow = 'hidden';
   }
 
   closeDialog = () => {
     this.dialogVisible = false;
+    document.body.style.overflow = 'auto';
   };
 }

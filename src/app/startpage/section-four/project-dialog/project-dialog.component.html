@@ -1,12 +1,12 @@
 <div class="overlay" *ngIf="show" (click)="close()">
   <div class="dialog" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="close()">×</button>
+    <span class="close-btn" (click)="close()">×</span>
     <div>
-      <p>{{ project?.id }}</p>
+      <h4>{{ project?.id }}</h4>
 
       <h2 class="dialog-title">{{ project?.title }}</h2>
 
-      <p>Worum geht es in diesem Projekt?</p>
+      <h3>Worum geht es in diesem Projekt?</h3>
 
       <p class="dialog-description">{{ project?.description }}</p>
 
@@ -14,7 +14,7 @@
         <li *ngFor="let tech of project.technologies" class="{{ tech }}">{{ tech }}</li>
       </ul>
 
-      <div>
+      <div class="ref-btn-row">
         <button>GitHub</button>
         <button>Live Test</button>
       </div>

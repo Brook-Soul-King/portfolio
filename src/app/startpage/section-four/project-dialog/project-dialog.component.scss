@@ -10,8 +10,39 @@
   z-index: 9999;
 }
 
+h2 {
+  font-size: 64px !important;
+  color: white !important;
+  font-family: "FiraCode";
+  line-height: 1;
+  margin-bottom: 24px;
+  letter-spacing: -3%;
+}
+
+h3 {
+  font-family: "FiraCode";
+  font-size: 24px !important;
+  color: #3dcfb6 !important;
+  margin-bottom: 16px;
+  font-weight: Bold;
+}
+
+h4 {
+  font-size: 128px !important;
+  color: #3dcfb6 !important;
+  line-height: 1;
+  font-weight: Bold;
+}
+
+p {
+  font-size: 18px !important;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
 .dialog {
   background: #1c1c1c;
+  background: linear-gradient(20deg, rgba(28, 28, 28, 1) 40%, rgba(8, 70, 59, 1) 100%);
   padding: 32px;
   border-radius: 16px;
   border: 2px solid #3dcfb6;
@@ -27,6 +58,7 @@
   @include flexer(center, center, row, 62px);
 
   >div {
+    max-width: 480px;
   }
 
   img {
@@ -36,26 +68,23 @@
   }
 }
 
-.dialog-title {
-  font-size: 28px;
-  color: #3dcfb6;
-  margin-bottom: 16px;
-}
 
-.dialog-description {
-  font-size: 16px;
-  line-height: 1.5;
-}
 
 .close-btn {
   position: absolute;
   top: 16px;
-  right: 16px;
-  font-size: 24px;
+  right: 32px;
+  font-size: 40px;
+  line-height: 1;
   background: transparent;
   border: none;
   color: #3dcfb6;
   cursor: pointer;
+  transition: scale 0.2s ease-in-out;
+
+  &:hover {
+    scale: 1.5;
+  }
 }
 
 @keyframes fadeIn {
@@ -73,15 +102,21 @@
 ul {
   list-style: none;
   @include flexer(center, left, row, 24px);
+  flex-wrap: wrap;
   height: 24px;
-  margin: 16px 0;
-  padding: 0 8px;
+  margin: 0 0 32px 0;
+  padding: 0 0px;
+  font-size: 18px;
 
   li {
     width: fit-content;
     position: relative;
     padding-left: 24px;
   }
+}
+
+.ref-btn-row {
+  @include flexer(center, flex-start, row, 32px);
 }
 
 .JavaScript::after,
@@ -97,6 +132,7 @@ ul {
   transform: translateX(-50%);
   width: 24px;
   height: 24px;
+  background-size: cover;
   background-position: center;
   background-repeat: none !important;
 }
@@ -119,10 +155,64 @@ ul {
 
 .REST::after {
   background: url("./../../../../assets/img/coding-icons/rest-api.svg") !important;
+  width: 26px;
+  height: 28px;
+  background-size: 26px 28px;
+  background-position: left !important;
+
 }
 
 .Firebase::after {
   background: url("./../../../../assets/img/coding-icons/firebase.svg") !important;
   width: 18px;
   height: 24px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .dialog {
+    @include flexer(center, center, column-reverse, 12px);
+    height: 90vh;
+    padding: 72px 12px 8px 12px;
+
+    img {
+      max-width: 490px;
+      width: 100%;
+    }
+
+    >div {
+      max-width: 490px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    font-size: 56px !important;
+    line-height: 0.8;
+    margin-bottom: 24px;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    margin-bottom: 16px;
+  }
+
+  h4 {
+    font-size: 72px !important;
+    letter-spacing: -2%;
+  }
+
+  p {
+    font-size: 16px !important;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  ul {
+    @include flexer(center, left, row, 16px);
+    height: auto;
+    padding: 0 8px;
+    font-size: 16px;
+  }
 }
