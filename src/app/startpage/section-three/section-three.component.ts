@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './section-three.component.scss'
 })
 export class SectionThreeComponent {
+  bubbleVisible = false;
 
+  toggleBubble() {
+    this.bubbleVisible = !this.bubbleVisible;
+  }
 }

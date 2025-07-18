@@ -75,16 +75,21 @@ section {
         flex-wrap: wrap;
         text-align: center;
 
-        div {
+        .skill-icon {
             flex: 0 0 calc(100% / 5);
             @include flexer(center, center, column, 16px);
             transition: all 0.25s ease-in-out;
 
-            &:hover {
+            &:hover:not(:last-child) {
                 scale: 1.1;
                 //filter: drop-shadow(1px 1px 25px #fff);
                 font-weight: bold;
                 letter-spacing: 1px;
+            }
+
+            &:hover .groth-mindset-bubble:last-child,
+            &.active .groth-mindset-bubble:last-child {
+                opacity: 1;
             }
 
             svg {
@@ -248,6 +253,8 @@ section {
 }
 
 .growth-mindset {
+    position: relative;
+
     &:hover {
         svg {
             fill: #3DCFB6 !important;
@@ -257,4 +264,47 @@ section {
             color: #3DCFB6;
         }
     }
+}
+
+.groth-mindset-bubble {
+    max-width: 200px;
+    position: absolute;
+    background-color: white;
+    border-radius: 30px;
+    @include flexer(center, center, column, 8px);
+    padding: 16px;
+    top: -120px;
+    right: -52px;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
+
+    span {
+        color: #3DCFB6 !important;
+        font-size: 16px;
+        line-height: 100%;
+        font-weight: 400;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 40%;
+        width: 0;
+        height: 0;
+        border: 15px solid transparent;
+        border-top-color: white;
+        border-bottom: 0;
+        margin-left: -15px;
+        margin-bottom: -15px;
+    }
+}
+
+.interests {
+    @include flexer(center, center, row, 4px);
+}
+
+.interest {
+    @include flexer(center, center, column, 4px);
 }

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 export class ProjectDialogComponent {
   @Input() show = false;
   @Input() close!: () => void;
+  @Input() next!: () => void;
 
   @Input() project!: {
     id: string;

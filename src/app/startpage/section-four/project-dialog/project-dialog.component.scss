@@ -85,6 +85,36 @@ p {
   }
 }
 
+.next-btn {
+  color: #3dcfb6;
+  position: absolute;
+  right: 188px;
+  bottom: 20%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: -28px;
+    width: 19px;
+    height: 20px;
+    background: url("./../../../../assets/img/coding-icons/arrow-right.svg") no-repeat center;
+    background-size: cover;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    color: white;
+
+    &::after {
+      scale: 1.1;
+      right: -33px;
+    }
+  }
+}
+
 @keyframes fadeIn {
   from {
     transform: scale(0.95);
@@ -221,6 +251,7 @@ ul {
     font-size: 56px !important;
     line-height: 0.8;
     margin-bottom: 24px;
+    letter-spacing: -2%;
   }
 
   h3 {
@@ -244,5 +275,45 @@ ul {
     height: auto;
     padding: 0 8px;
     font-size: 16px;
+  }
+
+  .ref-btn-row {
+    @include flexer(center, flex-start, row, 16px);
+
+    .link-btn {
+      padding: 18px 29px 18px 18px;
+
+      &::after {
+        top: 24px;
+        right: 14px;
+      }
+
+      &:hover {
+        &::after {
+          top: 20px;
+          right: 12px;
+        }
+      }
+    }
+  }
+
+  .next-btn {
+    right: auto;
+    bottom: auto;
+    top: 28px;
+    left: 32px;
+
+    &::after {
+      top: 0px;
+      right: -27px;
+    }
+
+    &:hover {
+      &::after {
+        scale: 1.1;
+        top: 0px;
+        right: -27px;
+      }
+    }
   }
 }

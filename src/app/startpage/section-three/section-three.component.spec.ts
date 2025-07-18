@@ -10,8 +10,8 @@ describe('SectionThreeComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SectionThreeComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(SectionThreeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

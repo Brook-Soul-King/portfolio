@@ -1,6 +1,8 @@
 <div class="overlay" *ngIf="show" (click)="close()">
   <div class="dialog" (click)="$event.stopPropagation()">
     <span class="close-btn" (click)="close()">×</span>
+    <a class="next-btn" (click)="next()">Nächstes Projekt</a>
+
     <div>
       <h4>{{ project?.id }}</h4>
 

@@ -26,7 +26,7 @@ export class SectionFourComponent {
     },
     {
       id: '02',
-      title: 'El pollo loco',
+      title: 'Pollo loco',
       description: 'Objektorientiertes Sprung-, Lauf- und Wurfspiel. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       image: './assets/img/project-pollo.png'
@@ -57,4 +57,17 @@ export class SectionFourComponent {
     this.dialogVisible = false;
     document.body.style.overflow = 'auto';
   };
+
+  nextProject = () => {
+    if (!this.selectedProject) return;
+
+    const currentIndex = this.projects.findIndex(p => p.id === this.selectedProject.id);
+    const nextIndex = (currentIndex + 1) % this.projects.length;
+    const nextProject = this.projects[nextIndex];
+
+    this.selectedProject = nextProject;
+    this.dialogProjectTitle = nextProject.title;
+    this.dialogProjectDescription = nextProject.description;
+  };
+
 }
