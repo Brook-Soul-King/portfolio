@@ -87,8 +87,8 @@ section {
                 letter-spacing: 1px;
             }
 
-            &:hover .groth-mindset-bubble:last-child,
-            &.active .groth-mindset-bubble:last-child {
+            &:hover .growth-mindset-bubble:last-child,
+            &.active .growth-mindset-bubble:last-child {
                 opacity: 1;
             }
 
@@ -266,7 +266,7 @@ section {
     }
 }
 
-.groth-mindset-bubble {
+.growth-mindset-bubble {
     max-width: 200px;
     position: absolute;
     background-color: white;
