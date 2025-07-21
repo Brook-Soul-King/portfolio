@@ -4,8 +4,9 @@ section {
     width: 100%;
     max-width: 1440px;
     padding: 0 16px;
-    margin: 0 auto 150px auto;
-    @include flexer(center, space-between, row, 0);
+    margin: 0 auto;
+    @include sectionMargin();
+    @include flexer(center, space-between, row, 32px);
     font-size: 18px;
 
     .profile-pic {
@@ -78,7 +79,7 @@ section {
 
 @media screen and (max-width: 1219px) {
     section {
-        @include flexer(center, center, column, 40px);
+        @include flexer(center, center, column, 80px);
         font-size: 16px;
 
         h2 {

@@ -3,8 +3,9 @@
 section {
     max-width: 1440px;
     padding: 16px;
-    margin: 150px auto;
-    @include flexer(flex-start, center, row, 88px);
+    margin: 0px auto;
+    @include sectionMargin();
+    @include flexer(flex-start, center, row, 80px);
     flex-wrap: wrap;
 
     .left,
