@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { SectionOneComponent } from './section-one/section-one.component';
@@ -13,18 +13,26 @@ import { SectionSixComponent } from './section-six/section-six.component';
   selector: 'app-startpage',
   standalone: true,
   imports: [
-    HeaderComponent, 
-    FooterComponent, 
-    SectionOneComponent, 
-    SectionTwoComponent, 
-    SectionThreeComponent, 
-    SectionFourComponent, 
+    HeaderComponent,
+    FooterComponent,
+    SectionOneComponent,
+    SectionTwoComponent,
+    SectionThreeComponent,
+    SectionFourComponent,
     SectionFiveComponent,
     SectionSixComponent],
   templateUrl: './startpage.component.html',
   styleUrl: './startpage.component.scss'
 })
 
-export class StartpageComponent {
-
+export class StartpageComponent implements OnInit {
+  ngOnInit(): void {
+    document.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.cursor') as HTMLElement;
+      if (cursor) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      }
+    });
+  }
 }

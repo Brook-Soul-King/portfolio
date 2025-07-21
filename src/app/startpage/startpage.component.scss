@@ -1,1 +1,22 @@
 @import './../../styles.scss';
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+
+    border-radius: 50%;
+    background-color: #3DCFB6;
+    pointer-events: none;
+    //mix-blend-mode: difference; // optional für besseren Kontrast
+    box-shadow: 0 0 70px 35px #3DCFB6;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease;
+    z-index: 0;
+}
+
+// body {
+//     cursor: none !important; // damit der Standard-Cursor verschwindet
+// }
