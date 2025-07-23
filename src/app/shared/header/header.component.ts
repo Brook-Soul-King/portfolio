@@ -16,4 +16,8 @@ export class HeaderComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+  reload() {
+    window.location.reload();
+  }
 }

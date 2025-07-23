@@ -31,6 +31,7 @@ body {
     font-family: "Karla";
     position: relative;
     background-color: #1c1c1c;
+    z-index: 0;
 }
 
 cursor {
@@ -74,16 +75,6 @@ app-header {
     right: 0;
     z-index: 999;
 }
-
-// app-section-one,
-// app-section-two,
-// app-section-three,
-// app-section-four,
-// app-section-five,
-// app-section-six {
-//     margin-bottom: 75px !important;
-// }
-
 
 app-section-three {
     width: 100%;

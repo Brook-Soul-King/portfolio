@@ -24,6 +24,10 @@
             </nav>
         </section>
 
-        <div>Insert Logo</div>
+        <picture class="logo" (click)="reload()">
+            <source media="(min-width:850px)" srcset="./assets/img/logo.svg">
+            <source media="(max-width:849px)" srcset="./assets/img/logo-small.svg">
+            <img src="./assets/img/logo.svg" alt="Logo Lukas Schröer" style="width:auto;">
+        </picture>
     </div>
 </header>

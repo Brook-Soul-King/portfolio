@@ -1,0 +1,56 @@
+@import './../../styles.scss';
+
+.imprint-wrapper {
+    background: linear-gradient(20deg, rgba(28, 28, 28, 1) 40%, rgba(8, 70, 59, 1) 100%);
+
+}
+
+header {
+    background-color: transparent;
+    padding: 16px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+section {
+    z-index: 1000;
+
+    .section-wrapper {
+        max-width: 1440px;
+        margin: 0 auto 150px auto;
+        padding: 0 16px;
+        font-size: 18px;
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 32px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: #3dcfb6;
+        }
+    }
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: #3DCFB6;
+    pointer-events: none;
+    box-shadow: 0 0 70px 35px #3DCFB6;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease;
+    z-index: 0;
+}
