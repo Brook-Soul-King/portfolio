@@ -11,16 +11,18 @@
             <!-- Navigation mit ngClass -->
             <nav [ngClass]="{ 'active': isMenuOpen }">
                 <div>
-                    <a href="#section-2" class="hover-dot">Über mich</a>
-                    <a href="#section-3" class="hover-dot">Skills</a>
-                    <a href="#section-4" class="hover-dot">Projekte</a>
+                    <a href="#section-2" class="hover-dot">{{ 'header.ABOUTME' | translate }}</a>
+                    <a href="#section-3" class="hover-dot">{{ 'header.SKILLS' | translate }}</a>
+                    <a href="#section-4" class="hover-dot">{{ 'header.PROJECTS' | translate }}</a>
                 </div>
                 <div class="switch">
-                    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+                    <input [checked]="isEnglish" (change)="toggleLanguage()" id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
                     <label for="language-toggle"></label>
                     <span class="on">DE</span>
                     <span class="off">EN</span>
                 </div>
+                <!-- <mat-slide-toggle (change)="toggleLanguage()">Sprache</mat-slide-toggle>
+             -->
             </nav>
         </section>
 

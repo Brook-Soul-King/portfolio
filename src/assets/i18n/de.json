@@ -1,0 +1,28 @@
+{
+  "header": {
+    "ABOUTME": "Über mich",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projekte"
+  },
+  "sectionOne": {
+    "jobTitle": "Frontend Entwickler",
+    "toprojects": "Zu meinen Projekten",
+    "contactMe": "Kontaktiere mich"
+  },
+  "sectionTwo": {
+    "whoIAm": "Wer bin ich",
+    "aboutMe": "Über mich",
+    "greetings": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Bad-Nauheim. Angetrieben von den grenzenlosen Möglichkeiten in der IT freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu gestalten.",
+    "location": "Ich bin flexibel in Bezug auf die Arbeitsumgebung und arbeite sowohl vor Ort als auch remote effektiv. Vor Ort zu sein, ist jedoch meine bevorzugte Arbeitsweise.",
+    "mindset": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten ständig zu verbessern.",
+    "goal": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+  },
+  "sectionThree": {
+    "tec": "Technologien",
+    "tecText": "Mein Weg hat mich durch verschiedene Projekte geführt, bei denen ich eine Reihe von Frontend-Technologien und Konzepte angewendet habe. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwicklnden Welt der Webentwicklung vorne zu bleiben. ",
+    "youNeed": "Brauchen Sie",
+    "otherSkills": "andere Fähigkeiten?",
+    "contactMe": "Kontaktieren Sie mich gerne. Ich freue mich darauf mein Wissen zu erweitern.",
+    "letsTalk": "Lass uns reden"
+  }
+}

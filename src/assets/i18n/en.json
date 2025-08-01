@@ -1,0 +1,28 @@
+{
+  "header": {
+    "ABOUTME": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects"
+  },
+  "sectionOne": {
+    "jobTitle": "Frontend Developer",
+    "toprojects": "My Projects",
+    "contactMe": "Contact me"
+  },
+  "sectionTwo": {
+    "whoIAm": "Who I Am",
+    "aboutMe": "About me",
+    "greetings": "Hello, I am a German-speaking front-end developer based in Bad Nauheim. Driven by the limitless possibilities of IT, I look forward to designing visually appealing and intuitive websites and applications.",
+    "location": "I am flexible in terms of working environment and work effectively both on-site and remotely. However, being on-site is my preferred way of working.",
+    "mindset": "I am open-minded and always looking for personal challenges to continuously improve my knowledge and skills.",
+    "goal": "In my profession, programming is not just about writing code; it is a creative form of problem solving. I am proud of my ability to transform complex technical challenges into simple, user-friendly solutions. In this way, I help you achieve your goals and bring your visions to life."
+  },
+  "sectionThree": {
+    "tec": "Technologies",
+    "tecText": "My career path has taken me through various projects where I have applied a range of front-end technologies and concepts. I am open to new technologies and methods in order to continuously improve my skills and stay ahead in the ever-evolving world of web development.",
+    "youNeed": "Do you need",
+    "otherSkills": "other skills?",
+    "contactMe": "Please feel free to contact me. I look forward to expanding my knowledge.",
+    "letsTalk": "Let´s talk"
+  }
+}
