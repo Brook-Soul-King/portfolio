@@ -10,32 +10,49 @@
             <span>{{ 'sectionSix.letsTalk' | translate }}</span>
         </p>
     </div>
-    
-    <form class="right">
+
+    <form class="right" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="input-wrapper" (click)="focusInput(nameInput)">
             <label for="nameInput">{{ 'sectionSix.form.name' | translate }}</label>
-            <input id="nameInput" required #nameInput type="text" placeholder="{{ 'sectionSix.form.namePH' | translate }}" />
+            <input #name="ngModel" minlength="4" [(ngModel)]="contactData.name" id="nameInput" required #nameInput
+                type="text" name="name" placeholder="{{ 'sectionSix.form.namePH' | translate }}" />
+
+            @if (!name.valid && name.touched) {
+            <span class="warning">Please enter your Name!</span>
+            }
         </div>
 
         <div class="input-wrapper" (click)="focusInput(emailInput)">
             <label for="emailInput">{{ 'sectionSix.form.mail' | translate }}</label>
-            <input id="emailInput" required #emailInput type="text" placeholder="{{ 'sectionSix.form.mailPH' | translate }}" />
+            <input #email="ngModel" [(ngModel)]="contactData.email" id="emailInput" required #emailInput type="text" name="email"
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                placeholder="{{ 'sectionSix.form.mailPH' | translate }}" />
+
+            @if (!email.valid && email.touched) {
+            <span class="warning">Please enter your E-Mail!</span>
+            }
         </div>
 
         <div class="input-wrapper" (click)="focusInput(messageInput)">
             <label for="messageInput">{{ 'sectionSix.form.matter' | translate }}</label>
-            <textarea id="messageInput" required #messageInput
-                placeholder="{{ 'sectionSix.form.matterPH' | translate }}"></textarea>
+            <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="messageInput" required
+                #messageInput name="message" placeholder="{{ 'sectionSix.form.matterPH' | translate }}"></textarea>
+
+            @if (!message.valid && message.touched) {
+            <span class="warning">Please enter a message!</span>
+            }
         </div>
 
         <div class="confirm-wrapper">
             <input id="confirm-cb" type="checkbox" required />
             <label for="confirm-cb">
                 {{ 'sectionSix.form.legalNotice1' | translate }}
-                <a (click)="visitImprint()">{{ 'sectionSix.form.legalNotice2' | translate }}</a> 
+                <a (click)="visitImprint()">{{ 'sectionSix.form.legalNotice2' | translate }}</a>
                 {{ 'sectionSix.form.legalNotice3' | translate }}
             </label>
         </div>
+
+
 
         <button>
             {{ 'sectionSix.form.send' | translate }}
@@ -43,3 +60,7 @@
     </form>
 
 </section>
+
+<!-- @if (!message.valid && message.touched && !message.disabled) {
+            <span class="warning">Please enter a message!</span>
+            } -->

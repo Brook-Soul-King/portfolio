@@ -107,7 +107,10 @@
       "legalNotice1": "I have read the ",
       "legalNotice2": "Privacy Policy ",
       "legalNotice3": "and consent to the processing of my data in accordance with the information provided.",
-      "send": "Send message"
+      "send": "Send message",
+      "nameWarning": "Please enter your Name!",
+      "emailWarning": "Please enter your E-Mail!",
+      "messageWarning": "Please enter a message!"
     }
   }
 }

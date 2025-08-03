@@ -107,7 +107,10 @@
       "legalNotice1": "Ich habe die ",
       "legalNotice2": "Datenschutzerklärung ",
       "legalNotice3": "gelesen und stimme der Verarbeitung meiner Daten gemäß den Angaben zu.",
-      "send": "Nachricht senden"
+      "send": "Nachricht senden",
+      "nameWarning": "Bitte geben Sie Ihren Namen ein!",
+      "emailWarning": "Bitte geben Sie Ihre E-Mail ein!",
+      "messageWarning": "Bitte geben Sie ein Anliegen ein!"
     }
   }
 }
