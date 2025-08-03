@@ -16,6 +16,7 @@ export class SectionOneComponent {
     'Frontend Developer',
     'E-Commerce Manager',
     'Content-Manager',
+    'PIM-Manager',
   ];
 
   constructor(private translate: TranslateService) { }

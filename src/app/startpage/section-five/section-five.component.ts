@@ -1,79 +1,44 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-section-five',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './section-five.component.html',
   styleUrl: './section-five.component.scss'
 })
-export class SectionFiveComponent {
-  /**
-   * Karteninhalte, die im Slider dargestellt werden.
-   */
-  cards = [
-    {
-      qoute: 'Lukas has proven to be a reliable group Partner. His technical skills and proactive approach were crucial to the success of our project.',
-      coworker: 'Co Worker - Frontend Developer'
-    },
-    {
-      qoute: 'Lukas has proven to be a reliable group Partner. His technical skills and proactive approach were crucial to the success of our project.',
-      coworker: 'Co Worker - Frontend Developer'
-    },
-    {
-      qoute: 'Lukas has proven to be a reliable group Partner. His technical skills and proactive approach were crucial to the success of our project.',
-      coworker: 'Co Worker - Frontend Developer'
-    },
-    {
-      qoute: 'Lukas has proven to be a reliable group Partner. His technical skills and proactive approach were crucial to the success of our project.',
-      coworker: 'Co Worker - Frontend Developer'
-    },
-  ];
+export class SectionFiveComponent implements OnInit {
+  cards: { qoute: string, coworker: string }[] = [];
 
-  /**
-   * Anzahl gleichzeitig sichtbarer Karten.
-   */
   visibleCards = 3;
-
-  /**
-   * Aktuell sichtbarer Index in der erweiterten Kartenliste.
-   */
   currentIndex = this.visibleCards;
+  isAnimating = false;
 
-  /**
-   * Gibt den horizontalen Abstand (Gap) zwischen den Karten zurück.
-   */
+  constructor(private translate: TranslateService) { }
+
+  ngOnInit(): void {
+    this.loadCards();
+    this.translate.onLangChange.subscribe(() => this.loadCards());
+  }
+
+  loadCards(): void {
+    this.translate.get('sectionFive.qoutes').subscribe((data: any) => {
+      this.cards = Object.values(data);
+    });
+  }
+
   get gap(): number {
     return 72;
   }
 
-  /**
-   * Gibt an, ob aktuell eine Slide-Animation läuft.
-   */
-  isAnimating = false;
-
-  /**
-   * Hört auf Fenstergrößenänderungen und triggert die Neuberechnung der Position.
-   */
-  @HostListener('window:resize')
-  onResize(): void {
-    this.currentIndex = this.currentIndex;
-  }
-
-  /**
-   * Gibt die vollständige Liste der anzuzeigenden Karten zurück, inkl. Klone am Anfang und Ende für die Endlosrotation.
-   */
   get extendedCards() {
     const clonesStart = this.cards.slice(-this.visibleCards);
     const clonesEnd = this.cards.slice(0, this.visibleCards);
     return [...clonesStart, ...this.cards, ...clonesEnd];
   }
 
-  /**
-   * Bestimmt die Breite einer Karte basierend auf der Fensterbreite.
-   */
   getCardWidth(): number {
     const width = window.innerWidth;
     if (width <= 768) return 290;
@@ -81,9 +46,6 @@ export class SectionFiveComponent {
     return 750;
   }
 
-  /**
-   * Berechnet den CSS-Transform-Stil für die horizontale Positionierung des Sliders.
-   */
   getSliderTransform(): { transform: string } {
     const cardWidth = this.getCardWidth();
     const totalCardWidth = cardWidth + this.gap;
@@ -95,9 +57,6 @@ export class SectionFiveComponent {
     };
   }
 
-  /**
-   * Navigiert zur nächsten Karte.
-   */
   next(): void {
     if (this.isAnimating) return;
     this.isAnimating = true;
@@ -109,9 +68,6 @@ export class SectionFiveComponent {
     }, 400);
   }
 
-  /**
-   * Navigiert zur vorherigen Karte.
-   */
   prev(): void {
     if (this.isAnimating) return;
     this.isAnimating = true;
@@ -123,10 +79,6 @@ export class SectionFiveComponent {
     }, 400);
   }
 
-  /**
-   * Überprüft nach der Animation, ob der Slider in einem geklonten Bereich angekommen ist,
-   * und springt bei Bedarf zurück zur originalen Position für einen nahtlosen Loop.
-   */
   loopCheck(): void {
     const total = this.extendedCards.length;
     const clones = this.visibleCards;
@@ -142,9 +94,6 @@ export class SectionFiveComponent {
     }
   }
 
-  /**
-   * Deaktiviert temporär die CSS-Transition für einen „unsichtbaren“ Positionswechsel.
-   */
   disableTransitionTemporarily(): void {
     const slider = document.querySelector('.slider') as HTMLElement;
     if (!slider) return;
@@ -158,17 +107,10 @@ export class SectionFiveComponent {
     });
   }
 
-  /**
-   * Gibt den echten Index der aktuell sichtbaren Karte zurück, bezogen auf die Originaldaten (ohne Klone).
-   */
   getRealIndex(): number {
     return (this.currentIndex - this.visibleCards + this.cards.length) % this.cards.length;
   }
 
-  /**
-   * Springt durch Klick auf einen Dot zur entsprechenden Karte.
-   * @param index Index der Zielkarte im Originalkarten-Array
-   */
   goTo(index: number): void {
     if (this.isAnimating) return;
     this.isAnimating = true;

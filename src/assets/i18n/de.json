@@ -6,8 +6,8 @@
   },
   "sectionOne": {
     "jobTitle": "Frontend Entwickler",
-    "toprojects": "Zu meinen Projekten",
-    "contactMe": "Kontaktiere mich"
+    "toprojects": "Meine Projekte",
+    "contactMe": "Schreib mir"
   },
   "sectionTwo": {
     "whoIAm": "Wer bin ich",
@@ -23,6 +23,55 @@
     "youNeed": "Brauchen Sie",
     "otherSkills": "andere Fähigkeiten?",
     "contactMe": "Kontaktieren Sie mich gerne. Ich freue mich darauf mein Wissen zu erweitern.",
-    "letsTalk": "Lass uns reden"
+    "letsTalk": "Lass uns reden",
+    "greaterInterest": "Ich habe besonderes Interesse an"
+  },
+  "sectionFour": {
+    "myProjects": "Meine Projekte",
+    "porjectsIntro": "Entdecken Sie hier eine Auswahl meiner Arbeiten - interagieren Sie mit den Prohekten, um die Projekte zu testen.",
+    "projects": {
+      "join": {
+        "id": "01",
+        "title": "Join",
+        "description": "Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu.",
+        "technologies": "",
+        "image": "./assets/img/project-join.png"
+      },
+      "polloLoco": {
+        "id": "02",
+        "title": "Pollo loco",
+        "description": "Objektorientiertes Sprung-, Lauf- und Wurfspiel. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.",
+        "technologies": "",
+        "image": "./assets/img/project-pollo.png"
+      },
+      "pokedex": {
+        "id": "03",
+        "title": "Pokédex",
+        "description": "Ein interaktiver Pokédex mit Verbindung zu einer REST-API. Erkundet die große Welt der Pokemon und begebt euch auf eine nostalgische Reise.",
+        "technologies": "",
+        "image": "./assets/img/project-pokedex.png"
+      }
+    }
+  },
+  "sectionFive": {
+    "headline": "Was meine Kollegen über mich sagen",
+    "qoutes": {
+      "qouteOne": {
+        "qoute": "Lukas hat sich als zuverlässiger Partner der Gruppe erwiesen. Seine technischen Fähigkeiten und seine proaktive Herangehensweise waren entscheidend für den Erfolg unseres Projekts.",
+        "coworker": "Kol Lege - Frontend Developer"
+      },
+      "qouteTwo": {
+        "qoute": "Lukas hat sich als zuverlässiger Partner der Gruppe erwiesen. Seine technischen Fähigkeiten und seine proaktive Herangehensweise waren entscheidend für den Erfolg unseres Projekts.",
+        "coworker": "Kol Lege - Frontend Developer"
+      },
+      "qouteThree": {
+        "qoute": "Lukas hat sich als zuverlässiger Partner der Gruppe erwiesen. Seine technischen Fähigkeiten und seine proaktive Herangehensweise waren entscheidend für den Erfolg unseres Projekts.",
+        "coworker": "Kol Lege - Frontend Developer"
+      },
+      "qouteFour": {
+        "qoute": "Lukas hat sich als zuverlässiger Partner der Gruppe erwiesen. Seine technischen Fähigkeiten und seine proaktive Herangehensweise waren entscheidend für den Erfolg unseres Projekts.",
+        "coworker": "Kol Lege - Frontend Developer"
+      }
+    }
   }
 }

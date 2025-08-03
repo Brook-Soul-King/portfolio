@@ -1,10 +1,9 @@
 <section>
-  <h2>Was meine Kollegen über mich sagen</h2>
+  <h2>{{ 'sectionFive.headline' | translate }}</h2>
 
-  <div class="slider-wrapper">
+  <div class="slider-wrapper" *ngIf="extendedCards.length">
     <div class="slider" [ngStyle]="getSliderTransform()">
-      <div class="card" *ngFor="let card of extendedCards; 
-      let i = index" [class.active]="i === currentIndex">
+      <div class="card" *ngFor="let card of extendedCards; let i = index" [class.active]="i === currentIndex">
         <div class="card-border">
           <div>{{ card.qoute }}</div>
           <div class="coworker">
@@ -15,6 +14,8 @@
       </div>
     </div>
   </div>
+
+
 
   <div class="btn-row">
     <div (click)="prev()">

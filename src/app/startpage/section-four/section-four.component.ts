@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ProjectDialogComponent } from '../section-four/project-dialog/project-dialog.component';
 
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-section-four',
   standalone: true,
-  imports: [CommonModule, ProjectDialogComponent],
+  imports: [CommonModule, ProjectDialogComponent, TranslateModule],
   templateUrl: './section-four.component.html',
   styleUrl: './section-four.component.scss'
 })
@@ -15,6 +17,8 @@ export class SectionFourComponent {
   dialogVisible = false;
   dialogProjectTitle = '';
   dialogProjectDescription = '';
+
+  constructor(private translate: TranslateService) { }
 
   projects = [
     {

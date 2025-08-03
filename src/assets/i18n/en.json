@@ -23,6 +23,60 @@
     "youNeed": "Do you need",
     "otherSkills": "other skills?",
     "contactMe": "Please feel free to contact me. I look forward to expanding my knowledge.",
-    "letsTalk": "Let´s talk"
+    "letsTalk": "Let´s talk",
+    "greaterInterest": "I am particularly interested in"
+  },
+  "sectionFour": {
+    "myProjects": "Featured Projects",
+    "porjectsIntro": "Discover a selection of my work here – interact with the projects to test them out.",
+    "projects": {
+      "join": {
+        "id": "01",
+        "title": "Join",
+        "description": "Task manager inspired by the Kanban system. Create and organize tasks using drag & drop and assign users and categories.",
+        "technologies": "",
+        "image": "./assets/img/project-join.png"
+      },
+      "polloLoco": {
+        "id": "02",
+        "title": "Pollo loco",
+        "description": "Object-oriented jumping, running, and throwing game. Help Pepe find coins and Tabasco salsa to fight the crazy hen.",
+        "technologies": "",
+        "image": "./assets/img/project-pollo.png"
+      },
+      "pokedex": {
+        "id": "03",
+        "title": "Pokédex",
+        "description": "An interactive Pokédex connected to a REST API. Explore the vast world of Pokémon and embark on a nostalgic journey.",
+        "technologies": "",
+        "image": "./assets/img/project-pokedex.png"
+      }
+    }
+  },
+  "sectionFive": {
+    "headline": "What my colleagues say about me",
+    "qoutes": {
+      "qouteOne": {
+        "qoute": "Lukas has proven himself to be a reliable partner to the group. His technical skills and proactive approach were crucial to the success of our project.",
+        "coworker": "Co Worker - Frontend Developer"
+      },
+      "qouteTwo": {
+        "qoute": "Lukas has proven himself to be a reliable partner to the group. His technical skills and proactive approach were crucial to the success of our project.",
+        "coworker": "Co Worker - Frontend Developer"
+      },
+      "qouteThree": {
+        "qoute": "Lukas has proven himself to be a reliable partner to the group. His technical skills and proactive approach were crucial to the success of our project.",
+        "coworker": "Co Worker - Frontend Developer"
+      },
+      "qouteFour": {
+        "qoute": "Lukas has proven himself to be a reliable partner to the group. His technical skills and proactive approach were crucial to the success of our project.",
+        "coworker": "Co Worker - Frontend Developer"
+      }
+    }
+  },
+  "sectionSix": {
+    "jobTitle": "Frontend Developer",
+    "toprojects": "My Projects",
+    "contactMe": "Contact me"
   }
 }
