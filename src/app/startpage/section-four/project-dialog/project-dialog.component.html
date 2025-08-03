@@ -1,19 +1,23 @@
 <div class="overlay" *ngIf="show" (click)="close()">
   <div class="dialog" (click)="$event.stopPropagation()">
     <span class="close-btn" (click)="close()">×</span>
-    <a class="next-btn" (click)="next()">Nächstes Projekt</a>
+    <a class="next-btn" (click)="next()">
+      {{ 'sectionFour.nextProject' | translate }}
+    </a>
 
     <div>
-      <h4>{{ project?.id }}</h4>
+      <h4>{{ translatedProject?.id }}</h4>
 
-      <h2 class="dialog-title">{{ project?.title }}</h2>
+      <h2 class="dialog-title">{{ translatedProject?.title }}</h2>
 
-      <h3>Worum geht es in diesem Projekt?</h3>
+      <h3>{{ 'sectionFour.projectIntro' | translate }}</h3>
 
-      <p class="dialog-description">{{ project?.description }}</p>
+      <p class="dialog-description">{{ translatedProject?.description }}</p>
 
-      <ul *ngIf="project?.technologies">
-        <li *ngFor="let tech of project.technologies" class="{{ tech }}">{{ tech }}</li>
+      <ul *ngIf="translatedProject?.technologies">
+        <li *ngFor="let tech of translatedProject.technologies | keyvalue" class="{{ tech.value }}">
+          {{ tech.value }}
+        </li>
       </ul>
 
       <div class="ref-btn-row">
@@ -22,7 +26,6 @@
       </div>
     </div>
     
-    <img *ngIf="project?.image" [src]="project.image" [alt]="project.title" />
-
+    <img *ngIf="translatedProject?.image" [src]="translatedProject.image" [alt]="translatedProject.title" />
   </div>
 </div>

@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProjectDialogComponent } from '../section-four/project-dialog/project-dialog.component';
-
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -11,67 +10,51 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './section-four.component.html',
   styleUrl: './section-four.component.scss'
 })
-export class SectionFourComponent {
+export class SectionFourComponent implements OnInit {
   hoveredProject: string | null = null;
 
   dialogVisible = false;
-  dialogProjectTitle = '';
-  dialogProjectDescription = '';
+  selectedProject: any = null;
+  projects: any[] = [];
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService) {}
 
-  projects = [
-    {
-      id: '01',
-      title: 'Join',
-      description: 'Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu.',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
-      image: './assets/img/project-join.png'
-    },
-    {
-      id: '02',
-      title: 'Pollo loco',
-      description: 'Objektorientiertes Sprung-, Lauf- und Wurfspiel. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
-      image: './assets/img/project-pollo.png'
-    },
-    {
-      id: '03',
-      title: 'Pokédex',
-      description: 'Ein interaktiver Pokédex mit Verbindung zu einer REST-API. Erkundet die große Welt der Pokemon und begebt euch auf eine nostalgische Reise.',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'REST API'],
-      image: './assets/img/project-pokedex.png'
-    }
-  ];
+  ngOnInit(): void {
+    this.loadProjectsFromTranslation();
 
+    // Nachladen bei Sprachwechsel
+    this.translate.onLangChange.subscribe(() => {
+      this.loadProjectsFromTranslation();
+    });
+  }
 
-  setHoveredProject(projectName: string | null) {
+  loadProjectsFromTranslation(): void {
+    const translation = this.translate.instant('sectionFour.projects');
+
+    // Falls instant() leer zurückgibt, musst du get().subscribe verwenden
+    this.projects = Object.values(translation);
+  }
+
+  setHoveredProject(projectName: string | null): void {
     this.hoveredProject = projectName;
   }
 
-  selectedProject: any = null;
-
-  openDialog(project: any) {
+  openDialog(project: any): void {
     this.selectedProject = project;
     this.dialogVisible = true;
     document.body.style.overflow = 'hidden';
   }
 
-  closeDialog = () => {
+  closeDialog = (): void => {
     this.dialogVisible = false;
     document.body.style.overflow = 'auto';
   };
 
-  nextProject = () => {
+  nextProject = (): void => {
     if (!this.selectedProject) return;
 
     const currentIndex = this.projects.findIndex(p => p.id === this.selectedProject.id);
     const nextIndex = (currentIndex + 1) % this.projects.length;
-    const nextProject = this.projects[nextIndex];
-
-    this.selectedProject = nextProject;
-    this.dialogProjectTitle = nextProject.title;
-    this.dialogProjectDescription = nextProject.description;
+    this.selectedProject = this.projects[nextIndex];
   };
-
 }

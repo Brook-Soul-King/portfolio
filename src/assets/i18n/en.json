@@ -7,7 +7,7 @@
   "sectionOne": {
     "jobTitle": "Frontend Developer",
     "toprojects": "My Projects",
-    "contactMe": "Contact me"
+    "contactMe": "Contact Me"
   },
   "sectionTwo": {
     "whoIAm": "Who I Am",
@@ -34,24 +34,40 @@
         "id": "01",
         "title": "Join",
         "description": "Task manager inspired by the Kanban system. Create and organize tasks using drag & drop and assign users and categories.",
-        "technologies": "",
+        "technologies": {
+          "tec1": "JavaScript",
+          "tec2": "HTML",
+          "tec3": "CSS",
+          "tec4": "Firebase"
+        },
         "image": "./assets/img/project-join.png"
       },
       "polloLoco": {
         "id": "02",
         "title": "Pollo loco",
         "description": "Object-oriented jumping, running, and throwing game. Help Pepe find coins and Tabasco salsa to fight the crazy hen.",
-        "technologies": "",
+        "technologies": {
+          "tec1": "JavaScript",
+          "tec2": "HTML",
+          "tec3": "CSS"
+        },
         "image": "./assets/img/project-pollo.png"
       },
       "pokedex": {
         "id": "03",
         "title": "Pokédex",
         "description": "An interactive Pokédex connected to a REST API. Explore the vast world of Pokémon and embark on a nostalgic journey.",
-        "technologies": "",
+        "technologies": {
+          "tec1": "JavaScript",
+          "tec2": "HTML",
+          "tec3": "CSS",
+          "tec4": "REST API"
+        },
         "image": "./assets/img/project-pokedex.png"
       }
-    }
+    },
+    "projectIntro": "What is this project about?",
+    "nextProject": "Next project"
   },
   "sectionFive": {
     "headline": "What my colleagues say about me",

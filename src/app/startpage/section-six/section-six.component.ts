@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -6,7 +7,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-section-six',
   standalone: true,
-  imports: [TranslateModule, RouterModule],
+  imports: [TranslateModule, RouterModule, FormsModule],
   templateUrl: './section-six.component.html',
   styleUrl: './section-six.component.scss'
 })
