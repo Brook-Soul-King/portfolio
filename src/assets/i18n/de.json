@@ -73,5 +73,25 @@
         "coworker": "Kol Lege - Frontend Developer"
       }
     }
+  },
+  "sectionSix": {
+    "contactMe": "Schreiben Sie mir",
+    "together": "Gemeinsam ans Werk",
+    "problem": "Brauchen Sie Hilfe bei einem Problem?",
+    "formIntro": "Kontaktieren Sie mich über dieses Formular, ich freue mich, von Ihnen zu hören, Ihre Ideen zu erfahren und zu Ihren Projekten beizutragen.",
+    "inNeed": " Brauchen Sie einen Frontend-Entwickler?",
+    "letsTalk": "Reden wir drüber!",
+    "form": {
+      "name": "Wie ist Ihr Name?",
+      "namePH": "Ihr Name kommt hierhin",
+      "mail": "Wie lautet Ihre E-Mail?",
+      "mailPH": "ihreemail@email.com",
+      "matter": "Wie kann ich Ihnen helfen?",
+      "matterPH": "Hallo Lukas, ich bin interessiert an ...",
+      "legalNotice1": "Ich habe die ",
+      "legalNotice2": "Datenschutzerklärung ",
+      "legalNotice3": "gelesen und stimme der Verarbeitung meiner Daten gemäß den Angaben zu.",
+      "send": "Nachricht senden"
+    }
   }
 }

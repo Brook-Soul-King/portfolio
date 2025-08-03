@@ -75,8 +75,23 @@
     }
   },
   "sectionSix": {
-    "jobTitle": "Frontend Developer",
-    "toprojects": "My Projects",
-    "contactMe": "Contact me"
+    "contactMe": "Contact me",
+    "together": "Let's work together",
+    "problem": "Got a problem to solve?",
+    "formIntro": "Please contact me using this form. I look forward to hearing from you, learning about your ideas, and contributing to your projects.",
+    "inNeed": "Need a front-end developer?",
+    "letsTalk": "Let's talk about it!",
+    "form": {
+      "name": "What is your name?",
+      "namePH": "Your name goes here",
+      "mail": "What is your email address?",
+      "mailPH": "youremail@email.com",
+      "matter": "How can I help you?",
+      "matterPH": "Hello Lukas, I am interested in ...",
+      "legalNotice1": "I have read the ",
+      "legalNotice2": "Privacy Policy ",
+      "legalNotice3": "and consent to the processing of my data in accordance with the information provided.",
+      "send": "Send message"
+    }
   }
 }

@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-section-six',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule, RouterModule],
   templateUrl: './section-six.component.html',
   styleUrl: './section-six.component.scss'
 })
 export class SectionSixComponent {
+  constructor(private translate: TranslateService, private router: Router) { }
+
   focusInput(element: HTMLInputElement | HTMLTextAreaElement) {
     element.focus();
+  }
+
+  visitImprint() {
+    this.router.navigate(['/imprint']);
   }
 }
