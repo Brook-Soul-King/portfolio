@@ -50,19 +50,21 @@ section {
     }
 }
 
-.cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 1px;
-    border-radius: 50%;
-    background-color: #3DCFB6;
-    pointer-events: none;
-    box-shadow: 0 0 70px 35px #3DCFB6;
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s ease;
-    z-index: 0;
+@media screen and (min-width: 800px) {
+    .cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 1px;
+        border-radius: 50%;
+        background-color: #3DCFB6;
+        pointer-events: none;
+        box-shadow: 0 0 70px 35px #3DCFB6;
+        transform: translate(-50%, -50%);
+        transition: transform 0.05s ease;
+        z-index: 0;
+    }
 }
 
 .up-btn {
@@ -84,8 +86,6 @@ section {
     &:hover {
         background-color: rgba(61, 207, 182, 0.1);
 
-        svg {
-            
-        }
+        svg {}
     }
 }

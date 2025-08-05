@@ -12,4 +12,8 @@ export class FooterComponent {
   constructor(
     private router: Router
   ) { }
+
+  visitImprint() {
+    this.router.navigate(['/imprint']);
+  }
 }
