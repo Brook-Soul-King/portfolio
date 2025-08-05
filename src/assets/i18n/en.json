@@ -40,7 +40,9 @@
           "tec3": "CSS",
           "tec4": "Firebase"
         },
-        "image": "./assets/img/project-join.png"
+        "image": "./assets/img/project-join.png",
+        "urlP": "https://www.lukas-schroeer.developerakademie.net/join/login/login.html",
+        "urlGit": ""
       },
       "polloLoco": {
         "id": "02",
@@ -51,7 +53,9 @@
           "tec2": "HTML",
           "tec3": "CSS"
         },
-        "image": "./assets/img/project-pollo.png"
+        "image": "./assets/img/project-pollo.png",
+        "urlP": "https://www.lukas-schroeer.developerakademie.net/Z_EL_POLLO_LOCO_2/index.html",
+        "urlGit": ""
       },
       "pokedex": {
         "id": "03",
@@ -63,7 +67,9 @@
           "tec3": "CSS",
           "tec4": "REST API"
         },
-        "image": "./assets/img/project-pokedex.png"
+        "image": "./assets/img/project-pokedex.png",
+        "urlP": "https://www.lukas-schroeer.developerakademie.net/pokedex/index.html",
+        "urlGit": ""
       }
     },
     "projectIntro": "What is this project about?",
