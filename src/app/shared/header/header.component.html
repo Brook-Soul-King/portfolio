@@ -1,14 +1,12 @@
 <header>
     <div class="header-wrapper">
         <section>
-            <!-- Burger-Menü -->
             <div class="burger-menu" [class.active]="isMenuOpen" (click)="toggleMenu()">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
 
-            <!-- Navigation mit ngClass -->
             <nav [ngClass]="{ 'active': isMenuOpen }">
                 <div>
                     <a href="#section-2" class="hover-dot">{{ 'header.ABOUTME' | translate }}</a>
@@ -21,15 +19,13 @@
                     <span class="on">DE</span>
                     <span class="off">EN</span>
                 </div>
-                <!-- <mat-slide-toggle (change)="toggleLanguage()">Sprache</mat-slide-toggle>
-             -->
             </nav>
         </section>
 
         <picture class="logo" (click)="reload()">
-            <source media="(min-width:850px)" srcset="./assets/img/logo.svg">
-            <source media="(max-width:849px)" srcset="./assets/img/logo-small.svg">
-            <img src="./assets/img/logo.svg" alt="Logo Lukas Schröer" style="width:auto;">
+            <source media="(min-width:850px)" srcset="./assets/img/myLogo.svg">
+            <source media="(max-width:849px)" srcset="./assets/img/myLogo-small.svg">
+            <img src="./assets/img/myLogo.svg" alt="Logo Lukas Schröer" style="width:auto;">
         </picture>
     </div>
 </header>
