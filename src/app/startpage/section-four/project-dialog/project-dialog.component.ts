@@ -24,7 +24,13 @@ export class ProjectDialogComponent implements OnChanges {
 
   translatedProject: any = {};
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) { }
+
+  openLink(url: string) {
+    if (url) {
+      window.open(url, '_blank');
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['project'] && this.project?.id) {
