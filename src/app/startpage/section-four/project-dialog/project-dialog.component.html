@@ -21,14 +21,13 @@
       </ul>
 
       <div class="ref-btn-row">
-        <a class="link-btn" (click)="openLink(translatedProject?.urlGit)">GitHub</a>
-        <a class="link-btn" (click)="openLink(translatedProject?.urlP)">Live Test</a>
+        <button *ngIf="urlGit !== '#'" (click)="openLink(urlGit)">GitHub</button>
+        <button *ngIf="urlP !== '#'" (click)="openLink(urlP)">Live Test</button>
+
         <!-- <a *ngIf="translatedProject?.urlP" [href]="translatedProject.urlP" target="_blank" class="link-btn">Live Test</a> -->
       </div>
     </div>
-    
+
     <img *ngIf="translatedProject?.image" [src]="translatedProject.image" [alt]="translatedProject.title" />
   </div>
 </div>
-
-

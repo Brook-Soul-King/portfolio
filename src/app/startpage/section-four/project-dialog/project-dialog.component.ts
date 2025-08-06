@@ -1,6 +1,22 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+
+const PROJECT_LINKS: Record<string, { urlGit: string; urlP: string }> = {
+  '01': {
+    urlGit: 'https://github.com/Brook-Soul-King/join',
+    urlP: 'https://www.lukas-schroeer.developerakademie.net/join/login/login.html'
+  },
+  '02': {
+    urlGit: 'https://github.com/Brook-Soul-King/El_Pollo_Loco',
+    urlP: 'https://www.lukas-schroeer.developerakademie.net/Z_EL_POLLO_LOCO_2/index.html'
+  },
+  '03': {
+    urlGit: 'https://github.com/Brook-Soul-King/pokedex',
+    urlP: 'https://www.lukas-schroeer.developerakademie.net/pokedex/index.html'
+  }
+};
 
 @Component({
   selector: 'app-project-dialog',
@@ -9,7 +25,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   templateUrl: './project-dialog.component.html',
   styleUrl: './project-dialog.component.scss'
 })
-export class ProjectDialogComponent implements OnChanges {
+export class ProjectDialogComponent implements OnChanges, OnDestroy {
   @Input() show = false;
   @Input() close!: () => void;
   @Input() next!: () => void;
@@ -23,32 +39,49 @@ export class ProjectDialogComponent implements OnChanges {
   };
 
   translatedProject: any = {};
+  private langChangeSub?: Subscription;
 
-  constructor(private translate: TranslateService) { }
-
-  openLink(url: string) {
-    if (url) {
-      window.open(url, '_blank');
-    }
+  constructor(private translate: TranslateService) {
+    // Sprachwechsel abonnieren
+    this.langChangeSub = this.translate.onLangChange.subscribe(() => {
+      this.loadTranslation();
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['project'] && this.project?.id) {
-      this.loadTranslation(this.project.id);
+      this.loadTranslation();
     }
   }
 
-  private loadTranslation(id: string): void {
-    const key = `sectionFour.projects`;
+  ngOnDestroy(): void {
+    this.langChangeSub?.unsubscribe();
+  }
 
-    // Wenn möglich, synchron laden (für performance)
-    const allProjects = this.translate.instant(key);
-    this.translatedProject = Object.values(allProjects).find((p: any) => p.id === id);
+  // Getter für die URLs basierend auf Projekt-ID
+  get urlGit(): string {
+    return PROJECT_LINKS[this.project?.id ?? '']?.urlGit ?? '#';
+  }
 
-    // Falls nötig, dynamisch laden bei Sprachwechsel
-    this.translate.onLangChange.subscribe(() => {
-      const updated = this.translate.instant(key);
-      this.translatedProject = Object.values(updated).find((p: any) => p.id === id);
+  get urlP(): string {
+    return PROJECT_LINKS[this.project?.id ?? '']?.urlP ?? '#';
+  }
+
+  openLink(url: string): void {
+    if (url && url !== '#') {
+      window.open(url, '_blank');
+    }
+  }
+
+  private loadTranslation(): void {
+    if (!this.project?.id) {
+      this.translatedProject = {};
+      return;
+    }
+
+    this.translate.get('sectionFour.projects').subscribe((allProjects: any) => {
+      const projectsArray = Object.values(allProjects);
+      this.translatedProject = projectsArray.find((p: any) => p.id === this.project.id) || {};
     });
   }
 }
