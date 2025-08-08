@@ -12,14 +12,14 @@
   "sectionTwo": {
     "whoIAm": "Wer bin ich",
     "aboutMe": "Über mich",
-    "greetings": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Bad-Nauheim. Angetrieben von den grenzenlosen Möglichkeiten in der IT freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu gestalten.",
-    "location": "Ich bin flexibel in Bezug auf die Arbeitsumgebung und arbeite sowohl vor Ort als auch remote effektiv. Vor Ort zu sein, ist jedoch meine bevorzugte Arbeitsweise.",
-    "mindset": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten ständig zu verbessern.",
-    "goal": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+    "greetings": "Hallo, ich bin ein Frontend-Entwickler aus Bad Nauheim und arbeite auf Deutsch. Begeistert von den unendlichen Chancen der IT, gestalte ich gerne attraktive und benutzerfreundliche Websites sowie Anwendungen.",
+    "location": "Ich passe mich flexibel an verschiedene Arbeitsumgebungen an und kann sowohl im Büro als auch im Homeoffice produktiv arbeiten. Dennoch bevorzuge ich die Zusammenarbeit vor Ort.",
+    "mindset": "Ich bin offen für Neues und suche stets nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten kontinuierlich weiterzuentwickeln.",
+    "goal": "Programmieren ist für mich weit mehr als nur das Schreiben von Code – es ist eine kreative Art, Probleme zu lösen. Ich freue mich, komplexe technische Fragestellungen in verständliche und anwenderfreundliche Lösungen zu überführen. So unterstütze ich Sie dabei, Ihre Ziele zu verwirklichen und Ihre Visionen Realität werden zu lassen."
   },
   "sectionThree": {
     "tec": "Technologien",
-    "tecText": "Mein Weg hat mich durch verschiedene Projekte geführt, bei denen ich eine Reihe von Frontend-Technologien und Konzepte angewendet habe. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwicklnden Welt der Webentwicklung vorne zu bleiben. ",
+    "tecText": "Mein Weg führte mich durch vielfältige Projekte, in denen ich verschiedene Frontend-Technologien und -Ansätze erfolgreich eingesetzt habe. Ich bin stets offen für neue Technologien und Methoden, um meine Fähigkeiten weiterzuentwickeln und in der dynamischen Welt der Webentwicklung stets am Puls der Zeit zu bleiben.",
     "youNeed": "Brauchen Sie",
     "otherSkills": "andere Fähigkeiten?",
     "contactMe": "Kontaktieren Sie mich gerne. Ich freue mich darauf mein Wissen zu erweitern.",
@@ -116,7 +116,8 @@
       "send": "Nachricht senden",
       "nameWarning": "Bitte geben Sie Ihren Namen ein!",
       "emailWarning": "Bitte geben Sie Ihre E-Mail ein!",
-      "messageWarning": "Bitte geben Sie ein Anliegen ein!"
+      "messageWarning": "Bitte geben Sie ein Anliegen ein!",
+      "success": "Erfolgreich versendet!"
     }
   }
 }
