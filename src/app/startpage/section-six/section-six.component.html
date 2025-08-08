@@ -18,7 +18,7 @@
                 type="text" name="name" placeholder="{{ 'sectionSix.form.namePH' | translate }}" />
 
             @if (!name.valid && name.touched) {
-            <span class="warning">Please enter your Name!</span>
+            <span class="warning">{{ 'sectionSix.form.nameWarning' | translate }}</span>
             }
         </div>
 
@@ -29,7 +29,7 @@
                 placeholder="{{ 'sectionSix.form.mailPH' | translate }}" />
 
             @if (!email.valid && email.touched) {
-            <span class="warning">Please enter your E-Mail!</span>
+            <span class="warning">{{ 'sectionSix.form.emailWarning' | translate }}</span>
             }
         </div>
 
@@ -39,7 +39,7 @@
                 #messageInput name="message" placeholder="{{ 'sectionSix.form.matterPH' | translate }}"></textarea>
 
             @if (!message.valid && message.touched) {
-            <span class="warning">Please enter a message!</span>
+            <span class="warning">{{ 'sectionSix.form.messageWarning' | translate }}</span>
             }
         </div>
 

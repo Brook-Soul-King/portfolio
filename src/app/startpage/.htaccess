@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Ausnahme: PHP-Datei nicht an Angular weiterleiten
+  RewriteCond %{REQUEST_URI} !^/sendMail\.php$
+
+  # Alles andere an Angular index.html
+  RewriteRule ^ index.html [L]
+</IfModule>

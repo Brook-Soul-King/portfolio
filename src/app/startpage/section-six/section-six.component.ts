@@ -21,7 +21,6 @@ export class SectionSixComponent {
     email: "",
     message: ""
   };
-  mailTest = true;
 
   constructor(private translate: TranslateService, private router: Router) { }
 
@@ -34,7 +33,7 @@ export class SectionSixComponent {
   }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://lukas-schroeer.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -45,7 +44,7 @@ export class SectionSixComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
@@ -57,9 +56,6 @@ export class SectionSixComponent {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
     }
   }
 }
