@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -8,7 +9,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-section-six',
   standalone: true,
-  imports: [TranslateModule, RouterModule, FormsModule],
+  imports: [TranslateModule, RouterModule, FormsModule, CommonModule],
   templateUrl: './section-six.component.html',
   styleUrl: './section-six.component.scss'
 })
@@ -43,19 +44,24 @@ export class SectionSixComponent {
     },
   };
 
+  submittedSuccessfully = false;
+
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
-          next: (response) => {
-
+          next: () => {
+            this.submittedSuccessfully = true;  // <-- hier setzen!
             ngForm.resetForm();
+            // Optional: Erfolgsmeldung nach 3 Sekunden ausblenden
+            setTimeout(() => this.submittedSuccessfully = false, 3000);
           },
           error: (error) => {
             console.error(error);
-          },
-          complete: () => console.info('send post complete'),
+            this.submittedSuccessfully = false; // Optional
+          }
         });
     }
   }
+
 }

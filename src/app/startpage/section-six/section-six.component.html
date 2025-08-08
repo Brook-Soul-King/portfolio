@@ -24,8 +24,8 @@
 
         <div class="input-wrapper" (click)="focusInput(emailInput)">
             <label for="emailInput">{{ 'sectionSix.form.mail' | translate }}</label>
-            <input #email="ngModel" [(ngModel)]="contactData.email" id="emailInput" required #emailInput type="text" name="email"
-                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            <input #email="ngModel" [(ngModel)]="contactData.email" id="emailInput" required #emailInput type="text"
+                name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                 placeholder="{{ 'sectionSix.form.mailPH' | translate }}" />
 
             @if (!email.valid && email.touched) {
@@ -51,10 +51,15 @@
                 {{ 'sectionSix.form.legalNotice3' | translate }}
             </label>
         </div>
+        
+        <span *ngIf="submittedSuccessfully" class="success">
+            Erfolgreich versendet!
+        </span>
 
         <button>
             {{ 'sectionSix.form.send' | translate }}
         </button>
+
     </form>
 
 </section>
