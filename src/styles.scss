@@ -64,7 +64,7 @@ cursor {
     gap: $g;
 }
 
-@mixin sectionMargin($mt: 150px, $mb: 150px) {
+@mixin sectionMargin($mt: 200px, $mb: 200px) {
     margin-top: $mt;
     margin-bottom: $mb;
 }
