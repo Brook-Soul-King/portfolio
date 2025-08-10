@@ -20,6 +20,8 @@ h2 {
 .slider-wrapper {
     position: relative;
     display: flex;
+    max-width: 2200px;
+    margin: 0 auto;
     width: 100%;
     height: 275px;
     overflow: hidden;

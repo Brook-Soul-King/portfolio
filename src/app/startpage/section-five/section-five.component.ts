@@ -46,11 +46,28 @@ export class SectionFiveComponent implements OnInit {
     return 750;
   }
 
+  // getSliderTransform(): { transform: string } {
+  //   const cardWidth = this.getCardWidth();
+  //   const totalCardWidth = cardWidth + this.gap;
+  //   const offset = this.currentIndex * totalCardWidth;
+  //   const centerOffset = (window.innerWidth / 2) - (cardWidth / 2);
+
+  //   return {
+  //     transform: `translateX(${-offset + centerOffset}px)`
+  //   };
+  // }
+
   getSliderTransform(): { transform: string } {
     const cardWidth = this.getCardWidth();
     const totalCardWidth = cardWidth + this.gap;
+
+    const sliderWrapper = document.querySelector('.slider-wrapper') as HTMLElement;
+    const containerWidth = sliderWrapper
+      ? Math.min(sliderWrapper.offsetWidth, 2200) // Maximalbreite berücksichtigen
+      : Math.min(window.innerWidth, 2200);
+
     const offset = this.currentIndex * totalCardWidth;
-    const centerOffset = (window.innerWidth / 2) - (cardWidth / 2);
+    const centerOffset = (containerWidth / 2) - (cardWidth / 2);
 
     return {
       transform: `translateX(${-offset + centerOffset}px)`
