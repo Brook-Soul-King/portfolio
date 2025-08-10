@@ -10,7 +10,7 @@
     background-color: rgba(8, 70, 59, 0.75);
     width: 500px;
     height: 650px;
-    z-index: 3;
+    z-index: 0;
 }
 
 section {
@@ -23,7 +23,7 @@ section {
     @include flexer(center, space-between, row, 16px);
     flex-wrap: wrap;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 
     h2 {
         color: #3DCFB6;
