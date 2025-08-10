@@ -7,7 +7,6 @@ export const routes: Routes = [
   { path: 'imprint', component: ImprintComponent }
 ];
 
-// Hier den Router-Provider exportieren:
 export const appRoutingProviders = [
   provideRouter(routes)
 ];
