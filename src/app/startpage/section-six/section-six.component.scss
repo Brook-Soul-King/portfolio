@@ -206,10 +206,49 @@ p {
     font-weight: 600;
 }
 
+// // Für Inputs & Textareas mit Fehlern
+// input.ng-invalid.ng-touched::placeholder,
+// textarea.ng-invalid.ng-touched::placeholder {
+//     color: #cf001f; // rot wie in deiner warning class
+// }
+
 .success {
     color: #08e647;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
     margin-top: 24px;
+}
+
+/* Placeholder-Farbe bei Fehler */
+input.input-error::placeholder,
+textarea.input-error::placeholder,
+input.ng-invalid.ng-touched::placeholder,
+textarea.ng-invalid.ng-touched::placeholder {
+    color: #cf001f !important;
+}
+
+/* Vendor prefixes für ältere Browser */
+input.input-error::-webkit-input-placeholder,
+textarea.input-error::-webkit-input-placeholder {
+    color: #cf001f !important;
+}
+
+input.input-error::-moz-placeholder,
+textarea.input-error::-moz-placeholder {
+    color: #cf001f !important;
+    opacity: 1;
+}
+
+input.input-error:-ms-input-placeholder,
+textarea.input-error:-ms-input-placeholder {
+    color: #cf001f !important;
+}
+
+/* optional: sichtbare Fehler-Markierung am Rand */
+input.input-error,
+textarea.input-error,
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border-bottom-color: #cf001f !important;
 }

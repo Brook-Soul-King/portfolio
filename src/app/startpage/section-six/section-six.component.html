@@ -15,32 +15,27 @@
         <div class="input-wrapper" (click)="focusInput(nameInput)">
             <label for="nameInput">{{ 'sectionSix.form.name' | translate }}</label>
             <input #name="ngModel" minlength="4" [(ngModel)]="contactData.name" id="nameInput" required #nameInput
-                type="text" name="name" placeholder="{{ 'sectionSix.form.namePH' | translate }}" />
-
-            @if (!name.valid && name.touched) {
-            <span class="warning">{{ 'sectionSix.form.nameWarning' | translate }}</span>
-            }
+                type="text" name="name" [placeholder]="!name.valid && name.touched 
+                   ? ('sectionSix.form.nameWarning' | translate) 
+                   : ('sectionSix.form.namePH' | translate)" [class.input-error]="!name.valid && name.touched" />
         </div>
 
         <div class="input-wrapper" (click)="focusInput(emailInput)">
             <label for="emailInput">{{ 'sectionSix.form.mail' | translate }}</label>
             <input #email="ngModel" [(ngModel)]="contactData.email" id="emailInput" required #emailInput type="text"
-                name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                placeholder="{{ 'sectionSix.form.mailPH' | translate }}" />
+                name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" [placeholder]="!email.valid && email.touched 
+                   ? ('sectionSix.form.emailWarning' | translate) 
+                   : ('sectionSix.form.mailPH' | translate)" [class.input-error]="!email.valid && email.touched" />
 
-            @if (!email.valid && email.touched) {
-            <span class="warning">{{ 'sectionSix.form.emailWarning' | translate }}</span>
-            }
         </div>
 
         <div class="input-wrapper" (click)="focusInput(messageInput)">
             <label for="messageInput">{{ 'sectionSix.form.matter' | translate }}</label>
             <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="messageInput" required
-                #messageInput name="message" placeholder="{{ 'sectionSix.form.matterPH' | translate }}"></textarea>
-
-            @if (!message.valid && message.touched) {
-            <span class="warning">{{ 'sectionSix.form.messageWarning' | translate }}</span>
-            }
+                #messageInput name="message" [placeholder]="!message.valid && message.touched 
+                   ? ('sectionSix.form.messageWarning' | translate) 
+                   : ('sectionSix.form.matterPH' | translate)" [class.input-error]="!message.valid && message.touched">
+            </textarea>
         </div>
 
         <div class="confirm-wrapper">
@@ -51,7 +46,7 @@
                 {{ 'sectionSix.form.legalNotice3' | translate }}
             </label>
         </div>
-        
+
         <span *ngIf="submittedSuccessfully" class="success">
             {{ 'sectionSix.form.success' | translate }}
         </span>
