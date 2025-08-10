@@ -46,6 +46,8 @@ h1 {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
     background-color: #4b4b4b3a;
     rotate: -2deg;
     overflow: hidden;
@@ -95,6 +97,16 @@ h1 {
     100% {
         transform: translateX(-50%);
     }
+}
+
+.heroSection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1750px;
+    margin: 0 auto;
 }
 
 .atf-scroll-btn {
