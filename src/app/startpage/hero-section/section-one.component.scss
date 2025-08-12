@@ -105,14 +105,14 @@ h1 {
     left: 0;
     right: 0;
     width: 100%;
-    max-width: 1750px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 .atf-scroll-btn {
     position: absolute;
     z-index: 0;
-    left: 75px;
+    left: 16px;
     bottom: 0px;
     @include flexer(center, center, column, 16px);
 
@@ -158,7 +158,7 @@ h1 {
 .atf-contact {
     position: absolute;
     z-index: 0;
-    right: 75px;
+    right: 16px;
     bottom: 0px;
     @include flexer(center, center, column, 16px);
 
@@ -214,7 +214,7 @@ h1 {
         right: 16px;
 
         span {
-            height: 104px;
+            height: 90px;
         }
     }
 
@@ -222,7 +222,7 @@ h1 {
         left: 16px;
 
         span {
-            height: 212px;
+            height: 172px;
         }
     }
 

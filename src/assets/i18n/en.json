@@ -118,5 +118,37 @@
       "emailWarning": "Please enter your E-Mail!",
       "messageWarning": "Please enter a message!"
     }
+  },
+  "imprint": {
+    "headline": "Imprint",
+    "legal": "Information pursuant to § 5 DDG",
+    "name": "Lukas Schröer",
+    "street": "Kurstraße 1",
+    "city": "61231 Bad Nauheim",
+    "by": "Represented by",
+    "contact": "Contact",
+    "phone": "Phone: 015771159334",
+    "email": "kontakt@lukas-schroeer.de",
+    "disclaimer": "Disclaimer",
+    "content": "Liability for content",
+    "contentText": " The content of our website has been compiled with the utmost care. However, we cannot guarantee that the content is accurate, complete, or up to date. As a service provider, we are responsible for our own content on this website in accordance with § 7 para. 1 DDG (German Telemedia Act) and general laws. However, according to §§ 8 to 10 DDG, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information in accordance with general laws remain unaffected by this. However, liability in this regard is only possible from the time of knowledge of a specific legal violation. Upon becoming aware of such legal violations, we will remove this content immediately.",
+    "links": "Liability for links",
+    "linksText": "Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. No illegal content was identified at the time of linking. However, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of a violation of the law. If we become aware of any violations of the law, we will remove such links immediately.",
+    "copyright": "Copyright",
+    "copyrightText": "The content and works on these pages created by the site operators are subject to German copyright law. The reproduction, editing, distribution, and any kind of use outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of any infringements, we will remove such content immediately.",
+    "data": "Data Protection",
+    "dataText": "As a rule, it is possible to use our website without providing personal data. Insofar as personal data (e.g. name, address or email addresses) is collected on our website, this is always done on a voluntary basis as far as possible. This data will not be passed on to third parties without your express consent. We would like to point out that data transmission over the Internet (e.g., when communicating by email) can have security gaps. Complete protection of data against access by third parties is not possible. We hereby expressly object to the use of contact data published within the scope of the imprint obligation by third parties for the purpose of sending unsolicited advertising and information materials. The operators of the website expressly reserve the right to take legal action in the event of unsolicited advertising information being sent, for example through spam emails.",
+    "reference": {
+      "buildBy": "Created with the ",
+      "generatorLink": "legal notice generator ",
+      "Guide": "from WebsiteWissen.com, the guide to ",
+      "websiteLink": "website creation",
+      "homepageLink": "website builders",
+      "and": "and ",
+      "shopsLink": "shop systems",
+      "legalText": "Legal text from the ",
+      "lawFirm": "Hasselbach law firm"
+    },
+    "date": "As of August 12, 2025"
   }
 }

@@ -52,8 +52,8 @@ export class SectionFiveComponent implements OnInit {
 
     const sliderWrapper = document.querySelector('.slider-wrapper') as HTMLElement;
     const containerWidth = sliderWrapper
-      ? Math.min(sliderWrapper.offsetWidth, 2200) // Maximalbreite berücksichtigen
-      : Math.min(window.innerWidth, 2200);
+      ? Math.min(sliderWrapper.offsetWidth, 1440) // Maximalbreite berücksichtigen
+      : Math.min(window.innerWidth, 1440);
 
     const offset = this.currentIndex * totalCardWidth;
     const centerOffset = (containerWidth / 2) - (cardWidth / 2);

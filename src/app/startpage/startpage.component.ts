@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
-import { SectionOneComponent } from './section-one/section-one.component';
-import { SectionTwoComponent } from './section-two/section-two.component';
-import { SectionThreeComponent } from './section-three/section-three.component';
+import { SectionOneComponent } from './hero-section/section-one.component';
+import { SectionTwoComponent } from './aboutMe-section/section-two.component';
+import { SectionThreeComponent } from './skillSet-section/section-three.component';
 import { SectionFourComponent } from './section-four/section-four.component';
-import { SectionFiveComponent } from './section-five/section-five.component';
-import { SectionSixComponent } from './section-six/section-six.component';
+import { SectionFiveComponent } from './coworker-section/section-five.component';
+import { SectionSixComponent } from './contact-section/section-six.component';
 
 
 @Component({

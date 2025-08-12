@@ -30,7 +30,11 @@ export class SectionSixComponent {
   }
 
   visitImprint() {
-    this.router.navigate(['/imprint']);
+    this.router.navigate(['/imprint']).then(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 50);
+    });
   }
 
   post = {
