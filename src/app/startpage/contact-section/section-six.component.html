@@ -34,7 +34,8 @@
             <textarea #message="ngModel" minlength="4" [(ngModel)]="contactData.message" id="messageInput" required
                 #messageInput name="message" [placeholder]="!message.valid && message.touched 
                    ? ('sectionSix.form.messageWarning' | translate) 
-                   : ('sectionSix.form.matterPH' | translate)" [class.input-error]="!message.valid && message.touched">
+                   : ('sectionSix.form.matterPH' | translate)" [class.input-error]="!message.valid && message.touched"
+                style="overflow: hidden; max-height: 150px">
             </textarea>
         </div>
 
