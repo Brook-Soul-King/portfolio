@@ -1,4 +1,4 @@
-import { provideRouter, Routes } from '@angular/router';
+import { provideRouter, Routes, withInMemoryScrolling  } from '@angular/router';
 import { StartpageComponent } from './startpage/startpage.component';
 import { ImprintComponent } from './imprint/imprint.component';
 
@@ -9,5 +9,10 @@ export const routes: Routes = [
 
 // Hier den Router-Provider exportieren:
 export const appRoutingProviders = [
-  provideRouter(routes)
+  provideRouter(
+    routes,
+    withInMemoryScrolling({
+      anchorScrolling: 'enabled',
+    })
+  ),
 ];

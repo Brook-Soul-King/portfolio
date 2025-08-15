@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StartpageComponent } from './startpage.component';
+import { ViewportScroller } from '@angular/common';
+import { Component } from '@angular/core';
+
 
 describe('StartpageComponent', () => {
   let component: StartpageComponent;
@@ -10,8 +13,8 @@ describe('StartpageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [StartpageComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(StartpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

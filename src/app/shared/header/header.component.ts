@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule  } from '@angular/router';
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -17,7 +17,10 @@ export class HeaderComponent {
   isMenuOpen = false;
   isEnglish = false; // true = EN (checked), false = DE (unchecked)
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(
+    private translate: TranslateService, 
+    private router: Router
+  ) {
     const savedLang = localStorage.getItem('lang') || 'de';
     this.isEnglish = savedLang === 'en';
     this.translate.setDefaultLang(savedLang);
