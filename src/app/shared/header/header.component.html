@@ -9,9 +9,9 @@
 
             <nav [ngClass]="{ 'active': isMenuOpen }">
                 <div>
-                    <a [routerLink]="['/']" fragment="section-2" class="hover-dot">{{ 'header.ABOUTME' | translate }}</a>
-                    <a [routerLink]="['/']" fragment="section-3" class="hover-dot">{{ 'header.SKILLS' | translate }}</a>
-                    <a [routerLink]="['/']" fragment="section-4" class="hover-dot">{{ 'header.PROJECTS' | translate }}</a>
+                    <a (click)="toggleMenu()" [routerLink]="['/']" fragment="section-2" class="hover-dot">{{ 'header.ABOUTME' | translate }}</a>
+                    <a (click)="toggleMenu()" [routerLink]="['/']" fragment="section-3" class="hover-dot">{{ 'header.SKILLS' | translate }}</a>
+                    <a (click)="toggleMenu()" [routerLink]="['/']" fragment="section-4" class="hover-dot">{{ 'header.PROJECTS' | translate }}</a>
                 </div>
                 <div class="switch">
                     <input [checked]="isEnglish" (change)="toggleLanguage()" id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">

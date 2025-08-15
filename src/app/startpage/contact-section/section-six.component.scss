@@ -90,6 +90,22 @@ p {
             min-height: 50px;
         }
 
+        input:-webkit-autofill,
+        textarea:-webkit-autofill,
+        select:-webkit-autofill {
+            background-color: #1c1c1c !important;
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+            box-shadow: 0 0 0px 1000px #1c1c1c inset !important; // überschreibt Autofill-Hintergrund
+            transition: background-color 9999s ease-in-out 0s; // verhindert Farb-Flash
+        }
+
+        input:-moz-autofill,
+        textarea:-moz-autofill {
+            background-color: #1c1c1c !important;
+            color: white !important;
+        }
+
         &:nth-child(1) {
             border-top: 1px solid rgba(61, 207, 182, 0.7);
         }
@@ -207,11 +223,6 @@ p {
     font-weight: 600;
 }
 
-// // Für Inputs & Textareas mit Fehlern
-// input.ng-invalid.ng-touched::placeholder,
-// textarea.ng-invalid.ng-touched::placeholder {
-//     color: #cf001f; // rot wie in deiner warning class
-// }
 
 .success {
     color: #08e647;
@@ -221,7 +232,6 @@ p {
     margin-top: 24px;
 }
 
-/* Placeholder-Farbe bei Fehler */
 input.input-error::placeholder,
 textarea.input-error::placeholder,
 input.ng-invalid.ng-touched::placeholder,
@@ -229,7 +239,6 @@ textarea.ng-invalid.ng-touched::placeholder {
     color: #cf001f !important;
 }
 
-/* Vendor prefixes für ältere Browser */
 input.input-error::-webkit-input-placeholder,
 textarea.input-error::-webkit-input-placeholder {
     color: #cf001f !important;
@@ -246,7 +255,6 @@ textarea.input-error:-ms-input-placeholder {
     color: #cf001f !important;
 }
 
-/* optional: sichtbare Fehler-Markierung am Rand */
 input.input-error,
 textarea.input-error,
 input.ng-invalid.ng-touched,

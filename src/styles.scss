@@ -102,6 +102,21 @@ button,
     }
 }
 
+button:disabled,
+.btn:disabled {
+    border: 1px solid #aaa;
+    background-color: rgba(61, 207, 182, 0.1);
+    color: #bababa;
+    cursor: not-allowed;
+}
+
+button:not(:disabled):hover,
+.btn:not(:disabled):hover {
+    border: 1px solid #3dcfb6;
+    background-color: rgba(61, 207, 182, 0.1);
+    cursor: pointer;
+}
+
 .btn-row {
     @include flexer(center, center, row, 48px);
 }

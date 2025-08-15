@@ -11,11 +11,14 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [TranslateModule, RouterModule, FormsModule, CommonModule],
   templateUrl: './section-six.component.html',
-  styleUrl: './section-six.component.scss'
+  styleUrls: ['./section-six.component.scss']
 })
 export class SectionSixComponent {
 
   http = inject(HttpClient);
+  name = '';
+  email = '';
+  terms = false;
 
   contactData = {
     name: "",
@@ -41,10 +44,8 @@ export class SectionSixComponent {
     endPoint: 'https://lukas-schroeer.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
+      headers: { 'Content-Type': 'text/plain' },
+      responseType: 'text' as const
     },
   };
 

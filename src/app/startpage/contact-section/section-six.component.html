@@ -40,7 +40,7 @@
         </div>
 
         <div class="confirm-wrapper">
-            <input id="confirm-cb" type="checkbox" required />
+            <input id="confirm-cb" type="checkbox" name="terms" [(ngModel)]="terms" required />
             <label for="confirm-cb">
                 {{ 'sectionSix.form.legalNotice1' | translate }}
                 <a (click)="visitImprint()">{{ 'sectionSix.form.legalNotice2' | translate }}</a>
@@ -52,7 +52,7 @@
             {{ 'sectionSix.form.success' | translate }}
         </span>
 
-        <button>
+        <button [disabled]="!contactForm.valid">
             {{ 'sectionSix.form.send' | translate }}
         </button>
 
