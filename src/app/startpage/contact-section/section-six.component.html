@@ -43,26 +43,9 @@
             </textarea>
         </div>
 
-        <!-- <div class="confirm-wrapper">
-            <input id="confirm-cb" type="checkbox" name="terms" [(ngModel)]="terms" required />
-            <label for="confirm-cb">
-                {{ 'sectionSix.form.legalNotice1' | translate }}
-                <a (click)="visitImprint()">{{ 'sectionSix.form.legalNotice2' | translate }}</a>
-                {{ 'sectionSix.form.legalNotice3' | translate }}
-            </label>
-        </div>
-
-        <span *ngIf="submittedSuccessfully" class="success">
-            {{ 'sectionSix.form.success' | translate }}
-        </span>
-
-        <button [disabled]="!contactForm.valid">
-            {{ 'sectionSix.form.send' | translate }}
-        </button> -->
-
         <div class="confirm-wrapper">
             <input id="confirm-cb" type="checkbox" name="terms" [(ngModel)]="terms" #termsModel="ngModel" required
-                [class.invalid]="contactForm.submitted && !terms" />
+                [class.invalid]="formSubmitAttempt && !terms" />
             <label for="confirm-cb">
                 {{ 'sectionSix.form.legalNotice1' | translate }}
                 <a (click)="visitImprint()">{{ 'sectionSix.form.legalNotice2' | translate }}</a>
@@ -70,7 +53,7 @@
             </label>
         </div>
 
-        <div class="error" [class.visible]="contactForm.submitted && !terms">
+        <div class="error" [class.visible]="formSubmitAttempt && !terms">
             {{ 'sectionSix.form.termsWarning' | translate }}
         </div>
 
@@ -79,9 +62,7 @@
             {{ 'sectionSix.form.success' | translate }}
         </span>
 
-        <!-- Button -->
-        <button type="submit" [disabled]="!contactForm.valid" [class.btn-disabled]="!contactForm.valid"
-            [attr.aria-disabled]="!contactForm.valid">
+        <button type="submit" [class.btn-disabled]="!contactForm.valid">
             {{ 'sectionSix.form.send' | translate }}
         </button>
 

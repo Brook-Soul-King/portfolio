@@ -230,7 +230,7 @@ p {
   color: #cf001f !important;
   font-size: 16px !important;
   font-weight: 600 !important;
-  height: 16px; // optional: Platz für das Element reservieren
+  height: auto; // optional: Platz für das Element reservieren
 
   &.visible {
     opacity: 1;
@@ -241,7 +241,7 @@ p {
 /* Button sieht „disabled“ aus, bleibt aber klickbar für Feedback */
 button.btn-disabled {
     opacity: 0.5;
-    cursor: not-allowed;
+    cursor: not-allowed !important;
 }
 
 /* Checkbox-Rand rot markieren, wenn Versuch ohne Bestätigung */
