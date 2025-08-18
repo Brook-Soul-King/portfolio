@@ -69,15 +69,18 @@ section {
     right: 32px;
     bottom: 32px;
     backdrop-filter: blur(4px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     svg {
         fill: #fff;
+        transition: transform 0.2s ease-in-out;
     }
 
     &:hover {
         background-color: rgba(61, 207, 182, 0.1);
 
-        svg {}
+        svg {
+            transform: translateY(-3px);
+        }
     }
 }

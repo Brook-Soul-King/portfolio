@@ -29,15 +29,20 @@
                 <strong>{{ 'imprint.data' | translate }}</strong><br><br>
                 {{ 'imprint.dataText' | translate }}<br>
             </p><br>
-            {{ 'imprint.reference.buildBy' | translate }} 
-            <a href="https://impressum-generator.de" rel="dofollow">{{ 'imprint.reference.generatorLink' | translate }} </a> 
+            {{ 'imprint.reference.buildBy' | translate }}
+            <a href="https://impressum-generator.de" rel="dofollow">{{ 'imprint.reference.generatorLink' | translate }}
+            </a>
             {{ 'imprint.reference.Guide' | translate }}
-            <a href="https://websitewissen.com/website-erstellen" rel="dofollow">{{ 'imprint.reference.websiteLink' | translate }}</a>, 
-            <a href="https://websitewissen.com/homepage-baukasten-vergleich" rel="dofollow">{{ 'imprint.reference.homepageLink' | translate }}</a> 
+            <a href="https://websitewissen.com/website-erstellen" rel="dofollow">{{ 'imprint.reference.websiteLink' |
+                translate }}</a>,
+            <a href="https://websitewissen.com/homepage-baukasten-vergleich" rel="dofollow">{{
+                'imprint.reference.homepageLink' | translate }}</a>
             {{ 'imprint.reference.and' | translate }}
-            <a href="https://websitewissen.com/shopsysteme-vergleich" rel="dofollow">{{ 'imprint.reference.shopsLink' | translate }}</a>. 
+            <a href="https://websitewissen.com/shopsysteme-vergleich" rel="dofollow">{{ 'imprint.reference.shopsLink' |
+                translate }}</a>.
             {{ 'imprint.reference.legalText' | translate }}
-            <a href="https://www.kanzlei-hasselbach.de/" rel="dofollow">{{ 'imprint.reference.lawFirm' | translate }}</a>.
+            <a href="https://www.kanzlei-hasselbach.de/" rel="dofollow">{{ 'imprint.reference.lawFirm' | translate
+                }}</a>.
 
             <p style="margin-top: 56px; text-align: right;">Stand 12.08.2025</p>
         </div>
@@ -46,9 +51,10 @@
 <div class="cursor"></div>
 <app-footer></app-footer>
 
-<a class="up-btn" href="/imprint#header">
+<!-- Scroll-to-top Button -->
+<button class="up-btn" *ngIf="showScrollTop" (click)="scrollToTop()" aria-label="Scroll to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <title>arrow-up</title>
         <path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
     </svg>
-</a>
+</button>

@@ -16,3 +16,29 @@
         z-index: 0;
     }
 }
+
+.up-btn {
+    position: fixed;
+    border: 1px solid #3dcfb6;
+    border-radius: 50%;
+    padding: 8px;
+    height: 48px;
+    width: 48px;
+    right: 32px;
+    bottom: 32px;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease-in-out;
+
+    svg {
+        fill: #fff;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &:hover {
+        background-color: rgba(61, 207, 182, 0.1);
+
+        svg {
+            transform: translateY(-3px);
+        }
+    }
+}

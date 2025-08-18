@@ -24,9 +24,13 @@
             <label for="emailInput">{{ 'sectionSix.form.mail' | translate }}</label>
             <input #email="ngModel" [(ngModel)]="contactData.email" id="emailInput" required #emailInput type="text"
                 name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" [placeholder]="!email.valid && email.touched 
-                   ? ('sectionSix.form.emailWarning' | translate) 
-                   : ('sectionSix.form.mailPH' | translate)" [class.input-error]="!email.valid && email.touched" />
+       ? ('sectionSix.form.emailWarning' | translate) 
+       : ('sectionSix.form.mailPH' | translate)" [class.input-error]="!email.valid && email.touched" />
 
+            <div class="error"
+                [class.visible]="email.errors?.['pattern'] && email.touched && !email.errors?.['required']">
+                {{ 'sectionSix.form.invalidMail' | translate }}
+            </div>
         </div>
 
         <div class="input-wrapper" (click)="focusInput(messageInput)">
@@ -39,7 +43,7 @@
             </textarea>
         </div>
 
-        <div class="confirm-wrapper">
+        <!-- <div class="confirm-wrapper">
             <input id="confirm-cb" type="checkbox" name="terms" [(ngModel)]="terms" required />
             <label for="confirm-cb">
                 {{ 'sectionSix.form.legalNotice1' | translate }}
@@ -53,6 +57,31 @@
         </span>
 
         <button [disabled]="!contactForm.valid">
+            {{ 'sectionSix.form.send' | translate }}
+        </button> -->
+
+        <div class="confirm-wrapper">
+            <input id="confirm-cb" type="checkbox" name="terms" [(ngModel)]="terms" #termsModel="ngModel" required
+                [class.invalid]="contactForm.submitted && !terms" />
+            <label for="confirm-cb">
+                {{ 'sectionSix.form.legalNotice1' | translate }}
+                <a (click)="visitImprint()">{{ 'sectionSix.form.legalNotice2' | translate }}</a>
+                {{ 'sectionSix.form.legalNotice3' | translate }}
+            </label>
+        </div>
+
+        <div class="error" [class.visible]="contactForm.submitted && !terms">
+            {{ 'sectionSix.form.termsWarning' | translate }}
+        </div>
+
+        <!-- Erfolgsmeldung -->
+        <span *ngIf="submittedSuccessfully" class="success">
+            {{ 'sectionSix.form.success' | translate }}
+        </span>
+
+        <!-- Button -->
+        <button type="submit" [disabled]="!contactForm.valid" [class.btn-disabled]="!contactForm.valid"
+            [attr.aria-disabled]="!contactForm.valid">
             {{ 'sectionSix.form.send' | translate }}
         </button>
 

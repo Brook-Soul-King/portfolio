@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { SectionOneComponent } from './hero-section/section-one.component';
@@ -13,6 +14,7 @@ import { SectionSixComponent } from './contact-section/section-six.component';
   selector: 'app-startpage',
   standalone: true,
   imports: [
+    CommonModule,
     HeaderComponent,
     FooterComponent,
     SectionOneComponent,
@@ -35,4 +37,18 @@ export class StartpageComponent implements OnInit {
       }
     });
   }
+
+  showScrollTop = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    this.showScrollTop = scrollY > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
+
+

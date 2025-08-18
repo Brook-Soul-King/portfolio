@@ -51,22 +51,53 @@ export class SectionSixComponent {
 
   submittedSuccessfully = false;
 
+  // onSubmit(ngForm: NgForm) {
+  //   if (ngForm.submitted && ngForm.form.valid) {
+  //     this.http.post(this.post.endPoint, this.post.body(this.contactData))
+  //       .subscribe({
+  //         next: () => {
+  //           this.submittedSuccessfully = true;  // <-- hier setzen!
+  //           ngForm.resetForm();
+  //           // Optional: Erfolgsmeldung nach 3 Sekunden ausblenden
+  //           setTimeout(() => this.submittedSuccessfully = false, 3000);
+  //         },
+  //         error: (error) => {
+  //           console.error(error);
+  //           this.submittedSuccessfully = false; // Optional
+  //         }
+  //       });
+  //   }
+  // }
+
+  formSubmitAttempt = false; // <— neu
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid) {
+    this.formSubmitAttempt = true; // Versuch merken, um Hinweise zu zeigen
+
+    // Wenn Checkbox nicht gesetzt ist -> Hinweis (und Fokus auf Checkbox)
+    if (!this.terms) {
+      const cb = document.getElementById('confirm-cb') as HTMLInputElement | null;
+      cb?.focus();
+      return;
+    }
+
+    // Nur senden, wenn Formular wirklich gültig ist
+    if (ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: () => {
-            this.submittedSuccessfully = true;  // <-- hier setzen!
-            ngForm.resetForm();
-            // Optional: Erfolgsmeldung nach 3 Sekunden ausblenden
+            this.submittedSuccessfully = true;
+            ngForm.resetForm();         // setzt terms zurück
+            this.formSubmitAttempt = false; // Hinweis wieder aus
             setTimeout(() => this.submittedSuccessfully = false, 3000);
           },
           error: (error) => {
             console.error(error);
-            this.submittedSuccessfully = false; // Optional
+            this.submittedSuccessfully = false;
           }
         });
     }
   }
+
 
 }
