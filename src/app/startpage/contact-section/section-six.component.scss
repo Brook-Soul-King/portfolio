@@ -59,6 +59,10 @@ p {
         border-bottom: 1px solid rgba(61, 207, 182, 0.3);
         cursor: pointer;
 
+        &:nth-child(2) {
+            padding-bottom: 5px; //---------------------------------------------->
+        }
+
         label {
             color: #3dcfb6;
             font-size: 24px;
@@ -225,7 +229,6 @@ p {
 
 .error {
   opacity: 0;
-  margin-top: 8px;
   transition: opacity 0.3s ease;//margin-top 0.3s ease;
   color: #cf001f !important;
   font-size: 16px !important;
@@ -236,6 +239,14 @@ p {
     opacity: 1;
     //margin-top: 4px;
   }
+}
+
+.mt {
+    margin-top: 8px;
+}
+
+.mb {
+    margin-bottom: 8px;
 }
 
 /* Button sieht „disabled“ aus, bleibt aber klickbar für Feedback */

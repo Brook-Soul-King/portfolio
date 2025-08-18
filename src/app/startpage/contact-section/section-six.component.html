@@ -27,7 +27,7 @@
        ? ('sectionSix.form.emailWarning' | translate) 
        : ('sectionSix.form.mailPH' | translate)" [class.input-error]="!email.valid && email.touched" />
 
-            <div class="error"
+            <div class="error mb"
                 [class.visible]="email.errors?.['pattern'] && email.touched && !email.errors?.['required']">
                 {{ 'sectionSix.form.invalidMail' | translate }}
             </div>
@@ -53,7 +53,7 @@
             </label>
         </div>
 
-        <div class="error" [class.visible]="formSubmitAttempt && !terms">
+        <div class="error mt" [class.visible]="formSubmitAttempt && !terms">
             {{ 'sectionSix.form.termsWarning' | translate }}
         </div>
 
